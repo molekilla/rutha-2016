@@ -1,0 +1,57 @@
+{
+  "name": "rutha-2016",
+  "version": "0.1.0",
+  "description": "rutha ui",
+  "main": "lib/hapi/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "build:js": "node scripts/systemjs-build.js",
+    "build:sass": "node-sass --include-path scss scss/main.scss dist/main.css",
+    "sass:w": "node-sass --watch --include-path scss scss/main.scss src/app/css/main.css",
+    "start": "concurrent \"npm run sass:w\" \"npm run tsc:w\" \"nodemon lib/hapi/index.js -e js,html\"  ",
+    "test": "grunt test"
+  },
+  "author": "Rogelio Morrell",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/molekilla/rutha-2016.git"
+  },
+  "engines": {
+    "node": ">=4.2.1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.4.0",
+    "concurrently": "^1.0.0",
+    "node-sass": "^3.4.2",
+    "systemjs-builder": "^0.15.3",
+    "typescript": "^1.7.5"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-bootstrap": "^0.12.2",
+    "angular-messages": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "angular-ui-router": "^0.2.15",
+    "bcrypt-nodejs": "0.0.3",
+    "bell": "^5.0.0",
+    "boom": "^3.0.0",
+    "bootstrap": "^3.3.6",
+    "debug": "^2.2.0",
+    "good": "^6.4.0",
+    "good-console": "^5.2.0",
+    "hapi": "~12.0.0",
+    "hapi-auth-cookie": "^3.1.0",
+    "inert": "^3.2.0",
+    "joi": "7.0.0",
+    "mongoose": "^4.2.4",
+    "nodemon": "^1.8.1",
+    "plugin-ng-template": "^0.1.1",
+    "restangular": "^1.5.1",
+    "rutha-utils": "^1.1.0",
+    "systemjs": "^0.19.16",
+    "underscore": "^1.8.3",
+    "vision": "^4.0.0"
+  }
+}
