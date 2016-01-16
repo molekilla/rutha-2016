@@ -1,14 +1,16 @@
 /*globals System:true*/
 // Configure module loader
 System.config({
-  //baseURL: 'node_modules/',
-
-  // meta: {
-  //   'src/**/*.html': {
-  //     loader: 'ng-template'
-  //   }
-  // },
-  map:{
+  baseURL: 'public/',
+  defaultJSExtensions: true,
+  transpiler: "none",
+  packages: {
+    app: {
+      format: 'register',
+      defaultExtension: 'js'
+    }
+  },
+  map: {
     'ng-template': 'plugins/ng-template.js'
   },
   // Set paths for third-party libraries as modules

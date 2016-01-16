@@ -1,6 +1,6 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', 'restangular', 'angular-route', './main/index'], function(exports_1) {
-    var index_1;
+System.register(['angular', 'restangular', 'angular-route', './main/index', './main/index!ng-template'], function(exports_1) {
+    var index_1, index_ng_template_1;
     return {
         setters:[
             function (_1) {},
@@ -8,9 +8,11 @@ System.register(['angular', 'restangular', 'angular-route', './main/index'], fun
             function (_3) {},
             function (index_1_1) {
                 index_1 = index_1_1;
+            },
+            function (index_ng_template_1_1) {
+                index_ng_template_1 = index_ng_template_1_1;
             }],
         execute: function() {
-            //import indexTpl from './main/index!ng-template';
             angular.module('app-controllers', []);
             angular.module('app-services', []);
             angular.module('app-templates', []);
@@ -38,6 +40,7 @@ System.register(['angular', 'restangular', 'angular-route', './main/index'], fun
                     otherwise({
                     controller: index_1.default,
                     controllerAs: 'main',
+                    template: index_ng_template_1.default.templateUrl
                 });
             });
             angular.bootstrap(document, ['app']);

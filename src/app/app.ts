@@ -6,7 +6,7 @@ import 'angular-route';
 
 import TestController from './main/index';
 
-//import indexTpl from './main/index!ng-template';
+import indexTpl from './main/index!ng-template';
 
 angular.module('app-controllers', []);
 angular.module('app-services', []);
@@ -37,7 +37,7 @@ angular.module('app',
       otherwise({
           controller : TestController,
           controllerAs: 'main',
-          //template: indexTpl.templateUrl
+          template: indexTpl.templateUrl
       });
 });
  
