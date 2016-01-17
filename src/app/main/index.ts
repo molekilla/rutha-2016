@@ -3,7 +3,7 @@ import 'angular';
 export default class TestController {
   hello: String;
 
-  constructor() {
+  constructor($scope: angular.IScope) {
     this.hello = 'home';
   }
 }

@@ -5,7 +5,7 @@ System.register(['angular'], function(exports_1) {
             function (_1) {}],
         execute: function() {
             TestController = (function () {
-                function TestController() {
+                function TestController($scope) {
                     this.hello = 'home';
                 }
                 return TestController;

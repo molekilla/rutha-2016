@@ -1,12 +1,17 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
 
 import 'angular';
+import '_';
 import 'restangular';
 import 'angular-route';
 
 import TestController from './main/index';
+import LoginController from './main/login';
+import SignupController from './main/signup';
 
-import indexTpl from './main/index!ng-template';
+import IndexTpl from './main/index.html!text';
+import LoginTpl from './main/login.html!text';
+import SignupTpl from './main/signup.html!text';
 
 angular.module('app-controllers', []);
 angular.module('app-services', []);
@@ -25,19 +30,19 @@ angular.module('app',
 
   $routeProvider.
       when('/signup', {
-        templateUrl: 'app/main/signup.html',
+        template: SignupTpl,
         controllerAs: 'signup',
-        controller: 'SignupController'
+        controller: SignupController
       }).
       when('/login', {
-        templateUrl: 'app/main/login.html',
+        template: LoginTpl,
         controllerAs: 'login',
-        controller: 'LoginController'
+        controller: LoginController
       }).
       otherwise({
           controller : TestController,
           controllerAs: 'main',
-          template: indexTpl.templateUrl
+          template: IndexTpl
       });
 });
  

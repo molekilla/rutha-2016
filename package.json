@@ -1,6 +1,6 @@
 {
   "name": "rutha-2016",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "rutha ui",
   "main": "lib/hapi/index.js",
   "scripts": {
@@ -26,18 +26,14 @@
     "concurrently": "^1.0.0",
     "node-sass": "^3.4.2",
     "systemjs-builder": "^0.15.3",
-    "typescript": "^1.7.5"
+    "typescript": "^1.7.5",
+    "nodemon": "^1.8.1",
+    "systemjs": "^0.19.16"        
   },
   "dependencies": {
-    "angular": "^1.4.8",
-    "angular-bootstrap": "^0.12.2",
-    "angular-messages": "^1.4.8",
-    "angular-route": "^1.4.8",
-    "angular-ui-router": "^0.2.15",
     "bcrypt-nodejs": "0.0.3",
     "bell": "^5.0.0",
     "boom": "^3.0.0",
-    "bootstrap": "^3.3.6",
     "debug": "^2.2.0",
     "good": "^6.4.0",
     "good-console": "^5.2.0",
@@ -46,11 +42,7 @@
     "inert": "^3.2.0",
     "joi": "7.0.0",
     "mongoose": "^4.2.4",
-    "nodemon": "^1.8.1",
-    "plugin-ng-template": "^0.1.1",
-    "restangular": "^1.5.1",
     "rutha-utils": "^1.1.0",
-    "systemjs": "^0.19.16",
     "underscore": "^1.8.3",
     "vision": "^4.0.0"
   }
