@@ -26,33 +26,28 @@ System.register(['angular', '_', 'restangular', 'angular-route', './main/index',
                 signup_html_text_1 = signup_html_text_1_1;
             }],
         execute: function() {
-            angular.module('app-controllers', []);
-            angular.module('app-services', []);
-            angular.module('app-templates', []);
-            angular.module('app-directives', []);
-            angular.module('app-auth', []);
+            angular.module('app.controllers', []);
+            angular.module('app.services', []);
             angular.module('app', ['ngRoute', 'restangular'])
                 .config(function (RestangularProvider) {
                 RestangularProvider.setFullResponse(true);
                 RestangularProvider.setBaseUrl('/api');
             })
                 .config(function ($routeProvider) {
-                // main/login
-                // main/logout
                 $routeProvider.
                     when('/signup', {
                     template: signup_html_text_1.default,
-                    controllerAs: 'signup',
+                    controllerAs: 'vm',
                     controller: signup_1.default
                 }).
                     when('/login', {
                     template: login_html_text_1.default,
-                    controllerAs: 'login',
+                    controllerAs: 'vm',
                     controller: login_1.default
                 }).
                     otherwise({
-                    controller: index_1.default,
-                    controllerAs: 'main',
+                    controller: index_1.TestController,
+                    controllerAs: 'vm',
                     template: index_html_text_1.default
                 });
             });

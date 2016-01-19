@@ -6,11 +6,11 @@ System.register(['angular'], function(exports_1) {
         execute: function() {
             TestController = (function () {
                 function TestController($scope) {
-                    this.hello = 'home';
+                    $scope.message = 'Hello World';
                 }
                 return TestController;
             })();
-            exports_1("default", TestController);
+            exports_1("TestController", TestController);
         }
     }
 });

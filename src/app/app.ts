@@ -5,7 +5,7 @@ import '_';
 import 'restangular';
 import 'angular-route';
 
-import TestController from './main/index';
+import {TestController} from './main/index';
 import LoginController from './main/login';
 import SignupController from './main/signup';
 
@@ -13,35 +13,29 @@ import IndexTpl from './main/index.html!text';
 import LoginTpl from './main/login.html!text';
 import SignupTpl from './main/signup.html!text';
 
-angular.module('app-controllers', []);
-angular.module('app-services', []);
-angular.module('app-templates', []);
-angular.module('app-directives', []);
-angular.module('app-auth', []);
-angular.module('app',
-  ['ngRoute', 'restangular'])
-.config(function(RestangularProvider) {
+angular.module('app.controllers', []);
+angular.module('app.services', []);
+angular.module('app', ['ngRoute', 'restangular'])
+.config(function(RestangularProvider: any) {
     RestangularProvider.setFullResponse(true);
     RestangularProvider.setBaseUrl('/api');
 })
 .config(function($routeProvider) {
-// main/login
-// main/logout
 
   $routeProvider.
       when('/signup', {
         template: SignupTpl,
-        controllerAs: 'signup',
+        controllerAs: 'vm',
         controller: SignupController
       }).
       when('/login', {
         template: LoginTpl,
-        controllerAs: 'login',
+        controllerAs: 'vm',
         controller: LoginController
       }).
       otherwise({
           controller : TestController,
-          controllerAs: 'main',
+          controllerAs: 'vm',
           template: IndexTpl
       });
 });

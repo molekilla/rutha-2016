@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="es" class="ie8" ng-app="rutha"> <![endif]-->
-<!--[if IE 9]> <html lang="es" class="ie9" ng-app="rutha"> <![endif]-->
+<!--[if IE 8]> <html lang="es" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="es" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="es" ng-app="ruthaApp" ng-hint>
+<html lang="es">
 <!--<![endif]-->
 <head>
     <title><%- title %></title>
@@ -12,11 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Plain HTML template">
     <meta name="author" content="Rutha">
-    <link rel="stylesheet" href="../dist/components/bootstrap/dist/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="../dist/app.min.css">
-
-    <script src="../dist/app.js"></script>
-    <script src="../dist/templates.js"></script>
+    <link rel="stylesheet" href="../public/app/css/main.css" >
+    
+    <script src="../public/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="../public/app/system.config.js"></script>
+    <script>
+      System.import('app/app.js');
+    </script>
     </head>
     <body>
 
