@@ -1,17 +1,12 @@
-System.register(['angular'], function(exports_1) {
-    var SignupController;
-    return {
-        setters:[
-            function (_1) {}],
-        execute: function() {
-            SignupController = (function () {
-                function SignupController($scope, $log) {
-                    $log.info('Signup controller');
-                }
-                return SignupController;
-            })();
-            exports_1("default", SignupController);
-        }
+(function () {
+    'use strict';
+    SignupController.$inject = ['$scope', '$log'];
+    function SignupController($scope, $state) {
+        var vm = this;
+        $log.info('Signup controller');
     }
-});
+    angular
+        .module('app.controllers')
+        .controller('SignupController', SignupController);
+})();
 //# sourceMappingURL=signup.js.map

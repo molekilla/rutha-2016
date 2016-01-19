@@ -1,17 +1,12 @@
-System.register(['angular'], function(exports_1) {
-    var TestController;
-    return {
-        setters:[
-            function (_1) {}],
-        execute: function() {
-            TestController = (function () {
-                function TestController($scope) {
-                    this.hello = 'home';
-                }
-                return TestController;
-            })();
-            exports_1("default", TestController);
-        }
+(function () {
+    'use strict';
+    TestController.$inject = ['$scope'];
+    function TestController($scope) {
+        var vm = this;
+        vm.message = 'Hello World';
     }
-});
+    angular
+        .module('app.controllers')
+        .controller('TestController', TestController);
+})();
 //# sourceMappingURL=index.js.map

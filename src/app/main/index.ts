@@ -1,10 +1,17 @@
-import 'angular';
 
-export default class TestController {
-  hello: String;
 
-  constructor($scope: angular.IScope) {
-    this.hello = 'home';
-  }
-}
+(function () {
+    'use strict';
 
+    TestController.$inject = ['$scope'];
+
+    function TestController($scope) {
+        var vm = this;
+        vm.message = 'Hello World';
+    }
+
+    angular
+        .module('app.controllers')
+        .controller('TestController', TestController);
+
+})();

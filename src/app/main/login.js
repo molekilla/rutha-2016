@@ -1,17 +1,12 @@
-System.register(['angular'], function(exports_1) {
-    var LoginController;
-    return {
-        setters:[
-            function (_1) {}],
-        execute: function() {
-            LoginController = (function () {
-                function LoginController($scope, $log) {
-                    $log.info('Login controller');
-                }
-                return LoginController;
-            })();
-            exports_1("default", LoginController);
-        }
+(function () {
+    'use strict';
+    LoginController.$inject = ['$scope', '$log'];
+    function LoginController($scope, $log) {
+        var vm = this;
+        $log.info('Login controller');
     }
-});
+    angular
+        .module('app.controllers')
+        .controller('LoginController', LoginController);
+})();
 //# sourceMappingURL=login.js.map

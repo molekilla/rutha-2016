@@ -1,9 +1,16 @@
-import 'angular';
 
-export default class LoginController {
+(function () {
+    'use strict';
 
-  constructor($scope: angular.IScope, $log: angular.ILogService ) {
-    $log.info('Login controller');
-  }
-}
+    LoginController.$inject = ['$scope', '$log'];
 
+    function LoginController($scope, $log) {
+        var vm = this;
+        $log.info('Login controller');
+    }
+    
+    angular
+        .module('app.controllers')
+        .controller('LoginController', LoginController);
+
+})();

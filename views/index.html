@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="es" class="ie8" ng-app="rutha"> <![endif]-->
-<!--[if IE 9]> <html lang="es" class="ie9" ng-app="rutha"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="es">
-<!--<![endif]-->
 <head>
     <title><%- title %></title>
     <!-- Meta -->
@@ -14,13 +9,20 @@
     <meta name="author" content="Rutha">     
     <link rel="stylesheet" href="../public/app/css/main.css" >
     
+    <script src="../public/node_modules/angular/angular.js"></script>
+    <script src="../public/node_modules/underscore/underscore.js"></script>
+    <script src="../public/node_modules/angular-route/angular-route.js"></script>
+    <script src="../public/node_modules/restangular/dist/restangular.js"></script>
     <script src="../public/node_modules/systemjs/dist/system.src.js"></script>
-    <script src="../public/app/system.config.js"></script>
-    <script>
-      System.import('app/app.js');
-    </script>
+    
+    
+<script src="../public/app/app.js"></script>
+    <script src="../public/app/main/index.js"></script>
+    <script src="../public/app/main/login.js"></script>
+    <script src="../public/app/main/signup.js"></script>
+    
     </head>
-    <body>
+    <body  ng-app="app">
     <!-- Fixed navbar -->
     <%= navbar %>
 
