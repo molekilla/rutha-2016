@@ -6,6 +6,7 @@ export class LoginController {
     canReset: boolean;
     title: string;
 
+    static $inject = ['$scope', '$log', '$route'];
     constructor($scope: angular.IScope, $log: angular.ILogService, $route: angular.route.IRouteService) {
         $log.info('Login controller');
         

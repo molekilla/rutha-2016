@@ -14,30 +14,38 @@ import IndexTpl from './main/index.html!text';
 import LoginTpl from './main/login.html!text';
 import SignupTpl from './main/signup.html!text';
 
-angular.module('app', ['ngRoute', 'restangular'])
-.config(function(RestangularProvider: any) {
+RestangularConfig.$inject = ['RestangularProvider'];
+function RestangularConfig(RestangularProvider: any) {
     RestangularProvider.setFullResponse(true);
     RestangularProvider.setBaseUrl('/api');
-})
-.config(function($routeProvider: angular.route.IRouteProvider) {
-  $routeProvider.
-      when('/signup', {
-        template: SignupTpl,
-        controllerAs: 'vm',
-        controller: SignupController
-      }).
-      when('/login/:action', {
-        template: LoginTpl,
-        controllerAs: 'vm',
-        controller: LoginController        
-      }).
-      otherwise({
-          controller : TestController,
-          controllerAs: 'vm',
-          template: IndexTpl
-      });
+}
+
+RouteConfig.$inject = ['$routeProvider'];
+function RouteConfig($routeProvider: angular.route.IRouteProvider) {
+    $routeProvider.
+        when('/signup', {
+            template: SignupTpl,
+            controllerAs: 'vm',
+            controller: SignupController
+        }).
+        when('/login/:action', {
+            template: LoginTpl,
+            controllerAs: 'vm',
+            controller: LoginController
+        }).
+        otherwise({
+            controller: TestController,
+            controllerAs: 'vm',
+            template: IndexTpl
+        });
+}
+
+angular.module('app', ['ngRoute', 'restangular'])
+    .config(RestangularConfig)
+    .config(RouteConfig);
+
+angular.bootstrap(document, ['app'], {
+    strictDi: true
 });
- 
-angular.bootstrap(document, ['app']);
 
  

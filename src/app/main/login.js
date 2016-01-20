@@ -14,6 +14,7 @@ System.register(['angular'], function(exports_1) {
                         this.title = 'Reset';
                     }
                 }
+                LoginController.$inject = ['$scope', '$log', '$route'];
                 return LoginController;
             })();
             exports_1("LoginController", LoginController);
