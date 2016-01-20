@@ -10,7 +10,7 @@ System.register(['angular'], function(exports_1) {
                 }
                 return SignupController;
             })();
-            exports_1("default", SignupController);
+            exports_1("SignupController", SignupController);
         }
     }
 });

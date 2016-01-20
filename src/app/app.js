@@ -26,8 +26,6 @@ System.register(['angular', '_', 'restangular', 'angular-route', './main/index',
                 signup_html_text_1 = signup_html_text_1_1;
             }],
         execute: function() {
-            angular.module('app.controllers', []);
-            angular.module('app.services', []);
             angular.module('app', ['ngRoute', 'restangular'])
                 .config(function (RestangularProvider) {
                 RestangularProvider.setFullResponse(true);
@@ -38,12 +36,12 @@ System.register(['angular', '_', 'restangular', 'angular-route', './main/index',
                     when('/signup', {
                     template: signup_html_text_1.default,
                     controllerAs: 'vm',
-                    controller: signup_1.default
+                    controller: signup_1.SignupController
                 }).
-                    when('/login', {
+                    when('/login/:action', {
                     template: login_html_text_1.default,
                     controllerAs: 'vm',
-                    controller: login_1.default
+                    controller: login_1.LoginController
                 }).
                     otherwise({
                     controller: index_1.TestController,
