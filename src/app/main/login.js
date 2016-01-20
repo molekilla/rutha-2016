@@ -5,16 +5,16 @@ System.register(['angular'], function(exports_1) {
             function (_1) {}],
         execute: function() {
             LoginController = (function () {
-                function LoginController($scope, $log, $route) {
+                function LoginController($scope, $log, $state) {
                     $log.info('Login controller');
-                    this.canReset = true;
+                    this._$state = $state;
                     this.title = 'Login';
-                    if ($route.current.params.action === 'forgot') {
-                        this.canReset = false;
-                        this.title = 'Reset';
-                    }
+                    this.canReset = true;
                 }
-                LoginController.$inject = ['$scope', '$log', '$route'];
+                LoginController.prototype.linkReset = function () {
+                    this._$state.go('login.forgot');
+                };
+                LoginController.$inject = ['$scope', '$log', '$state'];
                 return LoginController;
             })();
             exports_1("LoginController", LoginController);

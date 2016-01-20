@@ -28,9 +28,10 @@
     "systemjs-builder": "^0.15.3",
     "typescript": "^1.7.5",
     "nodemon": "^1.8.1",
-    "systemjs": "^0.19.16"        
+    "systemjs": "^0.19.16"
   },
   "dependencies": {
+    "angular-ui-router": "^0.2.15",
     "bcrypt-nodejs": "0.0.3",
     "bell": "^5.0.0",
     "boom": "^3.0.0",

@@ -5,17 +5,19 @@ export class LoginController {
 
     canReset: boolean;
     title: string;
-
-    static $inject = ['$scope', '$log', '$route'];
-    constructor($scope: angular.IScope, $log: angular.ILogService, $route: angular.route.IRouteService) {
+    _$state: angular.ui.IStateService;
+    
+    static $inject = ['$scope', '$log', '$state'];
+    constructor($scope: angular.IScope, $log: angular.ILogService, $state: angular.ui.IStateService) {
         $log.info('Login controller');
         
-        this.canReset = true;
+        this._$state = $state;
         this.title = 'Login';
-        if ($route.current.params.action === 'forgot') {
-            this.canReset = false;
-            this.title = 'Reset';
-        }
+        this.canReset = true;
+    }
+
+    linkReset() {
+        this._$state.go('login.forgot');
     }
 }
 
