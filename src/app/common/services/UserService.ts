@@ -2,20 +2,15 @@ import 'angular';
 import {User} from '../models/User';
 
 export class UserService {
-    _$http: angular.IHttpService;
-    _$q: angular.IQService;
-
     static $inject = ['$q'];
     static name: string = typeof UserService;
-    constructor($q: angular.IQService, $http: angular.IHttpService) {
-        this._$q = $q;
-        this._$http = $http;
+    constructor(private $q: angular.IQService, private $http: angular.IHttpService) {
     }
 
     signup(user: User): angular.IPromise<any> {
-        let deferred = this._$q.defer<any>();
+        let deferred = this.$q.defer<any>();
 
-        this._$http
+        this.$http
             .post('/auth/signup', {
                 email: user.username,
                 password: user.password
@@ -35,9 +30,9 @@ export class UserService {
     }
 
     login(user: User) {
-        let deferred = this._$q.defer();
+        let deferred = this.$q.defer();
 
-        this._$http
+        this.$http
             .post('/auth/login', {
                 email: user.username,
                 password: user.password
