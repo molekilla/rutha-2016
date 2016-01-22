@@ -1,34 +1,39 @@
-System.register(['angular', '../common/services/UserService', '../common/models/User'], function(exports_1) {
-    var UserService_1, User_1;
+System.register(['angular', '../common/services/UserService'], function(exports_1) {
+    var UserService_1;
     var SignupController;
     return {
         setters:[
             function (_1) {},
             function (UserService_1_1) {
                 UserService_1 = UserService_1_1;
-            },
-            function (User_1_1) {
-                User_1 = User_1_1;
             }],
         execute: function() {
             SignupController = (function () {
-                function SignupController($scope, $log, userService) {
+                function SignupController($scope, $log, $state, userService, errorLabel, register, email, password) {
+                    if (register === void 0) { register = {}; }
                     this.$scope = $scope;
                     this.$log = $log;
+                    this.$state = $state;
                     this.userService = userService;
+                    this.errorLabel = errorLabel;
+                    this.register = register;
+                    this.email = email;
+                    this.password = password;
                     $log.info('Signup controller');
                 }
                 SignupController.prototype.signup = function () {
+                    var _this = this;
                     this.userService
-                        .signup(new User_1.User(this.email, this.password))
+                        .signup({ username: this.register.email, password: this.register.password })
                         .then(function (response) {
+                        _this.errorLabel = null;
+                        _this.$state.go('login.main');
                     })
-                        .catch(function (err) {
+                        .catch(function (response) {
+                        _this.errorLabel = response.err || "An error ocurred";
                     });
-                    // let a = UserService.
-                    //.signup()
                 };
-                SignupController.$inject = ['$scope', '$log', UserService_1.UserService.name];
+                SignupController.$inject = ['$scope', '$log', '$state', UserService_1.UserService.name];
                 return SignupController;
             })();
             exports_1("SignupController", SignupController);

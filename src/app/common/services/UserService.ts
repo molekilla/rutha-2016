@@ -6,9 +6,10 @@ export interface IUserService {
 }
 
 export class UserService implements IUserService {
-    static $inject = ['$q'];
+    static $inject = ['$q', '$http'];
     static name: string = typeof UserService;
     constructor(private $q: angular.IQService, private $http: angular.IHttpService) {
+
     }
 
     signup(user: User): angular.IPromise<any> {
@@ -55,3 +56,7 @@ export class UserService implements IUserService {
         return deferred.promise;
     }
 }
+
+
+angular.module('app.services.UserService', [])
+  .service('UserService', UserService);

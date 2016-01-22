@@ -15,8 +15,9 @@ function RestangularConfig(RestangularProvider: any) {
 }
 
 
+let appModule = angular.module('app', ['ngRoute','ui.router', 'restangular', 'app.services.UserService']);
 
-angular.module('app', ['ngRoute','ui.router', 'restangular'])
+appModule
     .config(RestangularConfig)
     .config(UIRouteConfig);
 

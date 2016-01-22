@@ -49,11 +49,13 @@ System.register(['angular'], function(exports_1) {
                     });
                     return deferred.promise;
                 };
-                UserService.$inject = ['$q'];
+                UserService.$inject = ['$q', '$http'];
                 UserService.name = typeof UserService;
                 return UserService;
             })();
             exports_1("UserService", UserService);
+            angular.module('app.services.UserService', [])
+                .service('UserService', UserService);
         }
     }
 });

@@ -1,6 +1,7 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
 System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', './uiRouteConfig'], function(exports_1) {
     var uiRouteConfig_1;
+    var appModule;
     function RestangularConfig(RestangularProvider) {
         RestangularProvider.setFullResponse(true);
         RestangularProvider.setBaseUrl('/api');
@@ -17,7 +18,8 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             }],
         execute: function() {
             RestangularConfig.$inject = ['RestangularProvider'];
-            angular.module('app', ['ngRoute', 'ui.router', 'restangular'])
+            appModule = angular.module('app', ['ngRoute', 'ui.router', 'restangular', 'app.services.UserService']);
+            appModule
                 .config(RestangularConfig)
                 .config(uiRouteConfig_1.UIRouteConfig);
             angular.bootstrap(document, ['app'], {
