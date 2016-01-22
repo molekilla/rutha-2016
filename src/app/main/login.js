@@ -6,13 +6,15 @@ System.register(['angular'], function(exports_1) {
         execute: function() {
             LoginController = (function () {
                 function LoginController($scope, $log, $state) {
+                    this.$scope = $scope;
+                    this.$log = $log;
+                    this.$state = $state;
                     $log.info('Login controller');
-                    this._$state = $state;
                     this.title = 'Login';
                     this.canReset = true;
                 }
                 LoginController.prototype.linkReset = function () {
-                    this._$state.go('login.forgot');
+                    this.$state.go('login.forgot');
                 };
                 LoginController.$inject = ['$scope', '$log', '$state'];
                 return LoginController;

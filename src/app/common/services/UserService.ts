@@ -1,7 +1,11 @@
 import 'angular';
 import {User} from '../models/User';
 
-export class UserService {
+export interface IUserService {
+   signup(user: User): angular.IPromise<any>
+}
+
+export class UserService implements IUserService {
     static $inject = ['$q'];
     static name: string = typeof UserService;
     constructor(private $q: angular.IQService, private $http: angular.IHttpService) {

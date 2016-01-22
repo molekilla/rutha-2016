@@ -6,12 +6,12 @@ System.register(['angular'], function(exports_1) {
         execute: function() {
             UserService = (function () {
                 function UserService($q, $http) {
-                    this._$q = $q;
-                    this._$http = $http;
+                    this.$q = $q;
+                    this.$http = $http;
                 }
                 UserService.prototype.signup = function (user) {
-                    var deferred = this._$q.defer();
-                    this._$http
+                    var deferred = this.$q.defer();
+                    this.$http
                         .post('/auth/signup', {
                         email: user.username,
                         password: user.password
@@ -30,8 +30,8 @@ System.register(['angular'], function(exports_1) {
                     return deferred.promise;
                 };
                 UserService.prototype.login = function (user) {
-                    var deferred = this._$q.defer();
-                    this._$http
+                    var deferred = this.$q.defer();
+                    this.$http
                         .post('/auth/login', {
                         email: user.username,
                         password: user.password
