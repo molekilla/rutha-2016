@@ -2,7 +2,8 @@ import 'angular';
 import {User} from '../models/User';
 
 export interface IUserService {
-   signup(user: User): angular.IPromise<any>
+   signup(user: User): angular.IPromise<any>;
+   login(user: User): angular.IPromise<any>;
 }
 
 export class UserService implements IUserService {
@@ -42,7 +43,7 @@ export class UserService implements IUserService {
                 email: user.username,
                 password: user.password
             })
-            .success((response: any, status: number, headers) => {
+            .success((response: any, status: number, headers: angular.IHttpHeadersGetter) => {
                 if (status === 201) {
                     deferred.resolve({ err: null, data: true });
                 } else {

@@ -9,7 +9,7 @@ System.register(['angular', '../common/services/UserService'], function(exports_
             }],
         execute: function() {
             SignupController = (function () {
-                function SignupController($scope, $log, $state, userService, errorLabel, register, email, password) {
+                function SignupController($scope, $log, $state, userService, errorLabel, register) {
                     if (register === void 0) { register = {}; }
                     this.$scope = $scope;
                     this.$log = $log;
@@ -17,8 +17,6 @@ System.register(['angular', '../common/services/UserService'], function(exports_
                     this.userService = userService;
                     this.errorLabel = errorLabel;
                     this.register = register;
-                    this.email = email;
-                    this.password = password;
                     $log.info('Signup controller');
                 }
                 SignupController.prototype.signup = function () {

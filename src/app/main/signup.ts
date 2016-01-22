@@ -11,9 +11,7 @@ export class SignupController {
         private $state: angular.ui.IStateService,
         private userService: IUserService,
         public errorLabel: string,
-        public register: any = {},
-        public email: string,
-        public password: string) {
+        public register: any = {}) {
         $log.info('Signup controller');
     }
 

@@ -21,7 +21,10 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             appModule = angular.module('app', ['ngRoute', 'ui.router', 'restangular', 'app.services.UserService']);
             appModule
                 .config(RestangularConfig)
-                .config(uiRouteConfig_1.UIRouteConfig);
+                .config(uiRouteConfig_1.UIRouteConfig)
+                .config(['$httpProvider', function ($httpProvider) {
+                    $httpProvider.defaults.withCredentials = true;
+                }]);
             angular.bootstrap(document, ['app'], {
                 strictDi: true
             });

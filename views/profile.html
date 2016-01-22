@@ -22,17 +22,32 @@
     </head>
     <body>
 
-            <!-- Fixed navbar -->
-    <%= navbar %>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Rutha Stack</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="logout">Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
         <h1>Hello Hejsan Hola Rutha!</h1>
       </div>
       <p class="lead">Secure page</p>
-            
-      <div ng-view>
-      </div>
     </div>
 
     <div class="footer">
@@ -40,9 +55,5 @@
         <p class="text-muted">Rutha / MIT Licensed / Made in Panama.</p>
       </div>
     </div>
-
-          <script type='text/javascript'>//<![CDATA[
-document.write("<script async src='//HOST:3000/browser-sync-client.1.3.5.js'><\/script>".replace(/HOST/g, location.hostname));
-//]]></script>
     </body>
     </html>

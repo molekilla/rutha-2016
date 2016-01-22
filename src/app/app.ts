@@ -15,14 +15,15 @@ function RestangularConfig(RestangularProvider: any) {
 }
 
 
-let appModule = angular.module('app', ['ngRoute','ui.router', 'restangular', 'app.services.UserService']);
+let appModule = angular.module('app', ['ngRoute', 'ui.router', 'restangular', 'app.services.UserService']);
 
 appModule
     .config(RestangularConfig)
-    .config(UIRouteConfig);
+    .config(UIRouteConfig)
+    .config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.withCredentials = true;
+    }]);
 
 angular.bootstrap(document, ['app'], {
     strictDi: true
 });
-
- 
