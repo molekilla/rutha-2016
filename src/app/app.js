@@ -4,7 +4,7 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
     var appModule;
     function RestangularConfig(RestangularProvider) {
         RestangularProvider.setFullResponse(true);
-        RestangularProvider.setBaseUrl('/api');
+        RestangularProvider.setBaseUrl('/');
     }
     return {
         setters:[

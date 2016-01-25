@@ -11,7 +11,7 @@ import {UIRouteConfig} from './uiRouteConfig';
 RestangularConfig.$inject = ['RestangularProvider'];
 function RestangularConfig(RestangularProvider: any) {
     RestangularProvider.setFullResponse(true);
-    RestangularProvider.setBaseUrl('/api');
+    RestangularProvider.setBaseUrl('/');
 }
 
 

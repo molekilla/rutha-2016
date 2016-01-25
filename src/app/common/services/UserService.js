@@ -1,9 +1,61 @@
 System.register(['angular'], function(exports_1) {
-    var UserService;
+    var UserService2, UserService;
     return {
         setters:[
             function (_1) {}],
         execute: function() {
+            UserService2 = (function () {
+                function UserService2($q, restangular) {
+                    this.$q = $q;
+                    this.restangular = restangular;
+                }
+                UserService2.prototype.signup = function (user) {
+                    var deferred = this.$q.defer();
+                    var data = {
+                        email: user.username,
+                        password: user.password
+                    };
+                    this.restangular
+                        .all('/auth/signup')
+                        .post(data)
+                        .then(function (response) {
+                        if (response.status === 201) {
+                            deferred.resolve({ err: null, data: true });
+                        }
+                        else {
+                            deferred.reject({ err: response.data.message });
+                        }
+                    }, function (response) {
+                        deferred.reject({ err: response.data.message });
+                    });
+                    return deferred.promise;
+                };
+                UserService2.prototype.login = function (user) {
+                    var deferred = this.$q.defer();
+                    var data = {
+                        email: user.username,
+                        password: user.password
+                    };
+                    this.restangular
+                        .all('/auth/login')
+                        .post(data)
+                        .then(function (response) {
+                        if (response.status === 201) {
+                            deferred.resolve({ err: null, data: true });
+                        }
+                        else {
+                            deferred.reject({ err: response.data.message });
+                        }
+                    }, function (response) {
+                        deferred.reject({ err: response.data.message });
+                    });
+                    return deferred.promise;
+                };
+                UserService2.$inject = ['$q', 'Restangular'];
+                UserService2.name = typeof UserService2;
+                return UserService2;
+            })();
+            exports_1("UserService2", UserService2);
             UserService = (function () {
                 function UserService($q, $http) {
                     this.$q = $q;
@@ -55,7 +107,7 @@ System.register(['angular'], function(exports_1) {
             })();
             exports_1("UserService", UserService);
             angular.module('app.services.UserService', [])
-                .service('UserService', UserService);
+                .service('UserService', UserService2);
         }
     }
 });
