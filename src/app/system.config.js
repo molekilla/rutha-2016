@@ -28,6 +28,7 @@ System.config({
     'angular-route': 'npm:angular-route/angular-route',    
     'angular-ui-router': 'npm:angular-ui-router/build/angular-ui-router',
     'angular': 'npm:angular/angular',
+    'angular-messages': 'npm:angular-messages/angular-messages',
     'ng-template': 'npm:plugin-ng-template/ng-template', // buggy
     'text': 'assets/text'
   }

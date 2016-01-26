@@ -5,6 +5,7 @@ import '_';
 import 'restangular';
 import 'angular-route';
 import 'angular-ui-router';
+import 'angular-messages';
 
 import {UIRouteConfig} from './uiRouteConfig';
 import {UserListCtrl} from './profile/UserListCtrl';
@@ -16,7 +17,7 @@ function RestangularConfig(RestangularProvider: any) {
 }
 
 
-let appModule = angular.module('app', ['ngRoute',
+let appModule = angular.module('app', ['ngRoute','ngMessages', 
     'ui.router', 'restangular', 'app.services.UserService']);
 
 appModule

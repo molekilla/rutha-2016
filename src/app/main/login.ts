@@ -21,16 +21,18 @@ export class LoginController {
         this.canReset = true;
     }
 
-    login() {
-        this.userService
-            .login(new User(this.credentials.email, this.credentials.password ))
-            .then(response => {
-                this.errorLabel = null;
-                this.$window.location.href = '/profile';
-            })
-            .catch(response => {
-                this.errorLabel = response.err || "An error ocurred";
-            });
+    login(form: angular.IFormController) {
+        if (form.$valid) {
+            this.userService
+                .login(new User(this.credentials.email, this.credentials.password))
+                .then(response => {
+                    this.errorLabel = null;
+                    this.$window.location.href = '/profile';
+                })
+                .catch(response => {
+                    this.errorLabel = response.err || "An error ocurred";
+                });
+        }
     }
 
     linkReset() {

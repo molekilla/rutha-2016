@@ -25,17 +25,19 @@ System.register(['angular', '../common/services/UserService', '../common/models/
                     this.title = 'Login';
                     this.canReset = true;
                 }
-                LoginController.prototype.login = function () {
+                LoginController.prototype.login = function (form) {
                     var _this = this;
-                    this.userService
-                        .login(new User_1.User(this.credentials.email, this.credentials.password))
-                        .then(function (response) {
-                        _this.errorLabel = null;
-                        _this.$window.location.href = '/profile';
-                    })
-                        .catch(function (response) {
-                        _this.errorLabel = response.err || "An error ocurred";
-                    });
+                    if (form.$valid) {
+                        this.userService
+                            .login(new User_1.User(this.credentials.email, this.credentials.password))
+                            .then(function (response) {
+                            _this.errorLabel = null;
+                            _this.$window.location.href = '/profile';
+                        })
+                            .catch(function (response) {
+                            _this.errorLabel = response.err || "An error ocurred";
+                        });
+                    }
                 };
                 LoginController.prototype.linkReset = function () {
                     this.$state.go('login.forgot');

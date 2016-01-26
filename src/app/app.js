@@ -1,5 +1,5 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', './uiRouteConfig', './profile/UserListCtrl'], function(exports_1) {
+System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl'], function(exports_1) {
     var uiRouteConfig_1, UserListCtrl_1;
     var appModule;
     function RestangularConfig(RestangularProvider) {
@@ -13,6 +13,7 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             function (_3) {},
             function (_4) {},
             function (_5) {},
+            function (_6) {},
             function (uiRouteConfig_1_1) {
                 uiRouteConfig_1 = uiRouteConfig_1_1;
             },
@@ -21,7 +22,7 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             }],
         execute: function() {
             RestangularConfig.$inject = ['RestangularProvider'];
-            appModule = angular.module('app', ['ngRoute',
+            appModule = angular.module('app', ['ngRoute', 'ngMessages',
                 'ui.router', 'restangular', 'app.services.UserService']);
             appModule
                 .controller('UserListCtrl', UserListCtrl_1.UserListCtrl)

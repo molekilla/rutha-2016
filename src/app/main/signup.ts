@@ -15,15 +15,30 @@ export class SignupController {
         $log.info('Signup controller');
     }
 
-    signup() {
-        this.userService
-            .signup({ username: this.register.email, password: this.register.password })
-            .then(response => {
-                this.errorLabel = null;
-                this.$state.go('login.main');
-            })
-            .catch(response => {
-                this.errorLabel = response.err || "An error ocurred";
-            });
+    passwordMatch(form: any) {
+        let passwordConfirmation = form.passwordConfirmation;
+        let password = form.password;
+        if (password.$viewValue !== passwordConfirmation.$viewValue) {
+            passwordConfirmation.$error.nomatch = true;
+            passwordConfirmation.$setValidity(passwordConfirmation.$name, false);
+        } else {
+            passwordConfirmation.$error.nomatch = false;
+            passwordConfirmation.$setValidity(passwordConfirmation.$name, true);
+        }
+    };
+
+    signup(form: angular.IFormController) {
+
+        if (form.$valid) {
+            this.userService
+                .signup({ username: this.register.email, password: this.register.password })
+                .then(response => {
+                    this.errorLabel = null;
+                    this.$state.go('login.main');
+                })
+                .catch(response => {
+                    this.errorLabel = response.err || "An error ocurred";
+                });
+        }
     }
 }

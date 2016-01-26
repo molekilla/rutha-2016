@@ -19,17 +19,32 @@ System.register(['angular', '../common/services/UserService'], function(exports_
                     this.register = register;
                     $log.info('Signup controller');
                 }
-                SignupController.prototype.signup = function () {
+                SignupController.prototype.passwordMatch = function (form) {
+                    var passwordConfirmation = form.passwordConfirmation;
+                    var password = form.password;
+                    if (password.$viewValue !== passwordConfirmation.$viewValue) {
+                        passwordConfirmation.$error.nomatch = true;
+                        passwordConfirmation.$setValidity(passwordConfirmation.$name, false);
+                    }
+                    else {
+                        passwordConfirmation.$error.nomatch = false;
+                        passwordConfirmation.$setValidity(passwordConfirmation.$name, true);
+                    }
+                };
+                ;
+                SignupController.prototype.signup = function (form) {
                     var _this = this;
-                    this.userService
-                        .signup({ username: this.register.email, password: this.register.password })
-                        .then(function (response) {
-                        _this.errorLabel = null;
-                        _this.$state.go('login.main');
-                    })
-                        .catch(function (response) {
-                        _this.errorLabel = response.err || "An error ocurred";
-                    });
+                    if (form.$valid) {
+                        this.userService
+                            .signup({ username: this.register.email, password: this.register.password })
+                            .then(function (response) {
+                            _this.errorLabel = null;
+                            _this.$state.go('login.main');
+                        })
+                            .catch(function (response) {
+                            _this.errorLabel = response.err || "An error ocurred";
+                        });
+                    }
                 };
                 SignupController.$inject = ['$scope', '$log', '$state', UserService_1.UserService.name];
                 return SignupController;
