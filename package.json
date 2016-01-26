@@ -24,11 +24,12 @@
   "devDependencies": {
     "babel-core": "^6.4.0",
     "concurrently": "^1.0.0",
+    "live-reload": "^1.1.0",
     "node-sass": "^3.4.2",
-    "systemjs-builder": "^0.15.3",
-    "typescript": "^1.7.5",
     "nodemon": "^1.8.1",
-    "systemjs": "^0.19.16"        
+    "systemjs": "^0.19.16",
+    "systemjs-builder": "^0.15.3",
+    "typescript": "^1.7.5"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
