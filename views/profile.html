@@ -45,9 +45,13 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>Hello Hejsan Hola Rutha!</h1>
+        <h1>Users</h1>
       </div>
-      <p class="lead">Secure page</p>
+      <div ng-controller="UserListCtrl as vm">
+          <div ng-repeat="item in vm.users">
+              <div>{{ item.email }}</div>
+          </div>
+      </div>
     </div>
 
     <div class="footer">

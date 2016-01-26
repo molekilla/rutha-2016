@@ -9,6 +9,23 @@ System.register(['angular'], function(exports_1) {
                     this.$q = $q;
                     this.restangular = restangular;
                 }
+                UserService2.prototype.list = function () {
+                    var deferred = this.$q.defer();
+                    this.restangular
+                        .one('/users')
+                        .get()
+                        .then(function (response) {
+                        if (response.status === 200) {
+                            deferred.resolve(response.data);
+                        }
+                        else {
+                            deferred.reject({ err: response.data.message });
+                        }
+                    }, function (response) {
+                        deferred.reject({ err: response.data.message });
+                    });
+                    return deferred.promise;
+                };
                 UserService2.prototype.signup = function (user) {
                     var deferred = this.$q.defer();
                     var data = {
@@ -61,6 +78,9 @@ System.register(['angular'], function(exports_1) {
                     this.$q = $q;
                     this.$http = $http;
                 }
+                UserService.prototype.list = function () {
+                    return null;
+                };
                 UserService.prototype.signup = function (user) {
                     var deferred = this.$q.defer();
                     this.$http

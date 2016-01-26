@@ -2,6 +2,7 @@ import 'angular';
 import {User} from '../models/User';
 
 export interface IUserService {
+    list(): angular.IPromise<any>;
     signup(user: User): angular.IPromise<any>;
     login(user: User): angular.IPromise<any>;
 }
@@ -11,6 +12,25 @@ export class UserService2 implements IUserService {
     static name: string = typeof UserService2;
     constructor(private $q: angular.IQService, private restangular: restangular.IService) {
 
+    }
+
+    list(): angular.IPromise<any> {
+        let deferred = this.$q.defer<any>();
+
+        this.restangular
+            .one('/users')
+            .get()
+            .then(function(response) {
+                if (response.status === 200) {
+                    deferred.resolve(response.data);
+                } else {
+                    deferred.reject({ err: response.data.message });
+                }
+            }, function(response) {
+                deferred.reject({ err: response.data.message });
+            });
+
+        return deferred.promise;
     }
 
     signup(user: User): angular.IPromise<any> {
@@ -65,6 +85,10 @@ export class UserService implements IUserService {
     static name: string = typeof UserService;
     constructor(private $q: angular.IQService, private $http: angular.IHttpService) {
 
+    }
+
+    list(): angular.IPromise<any> {
+        return null;
     }
 
     signup(user: User): angular.IPromise<any> {

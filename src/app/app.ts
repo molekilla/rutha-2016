@@ -7,6 +7,7 @@ import 'angular-route';
 import 'angular-ui-router';
 
 import {UIRouteConfig} from './uiRouteConfig';
+import {UserListCtrl} from './profile/UserListCtrl';
 
 RestangularConfig.$inject = ['RestangularProvider'];
 function RestangularConfig(RestangularProvider: any) {
@@ -15,9 +16,11 @@ function RestangularConfig(RestangularProvider: any) {
 }
 
 
-let appModule = angular.module('app', ['ngRoute', 'ui.router', 'restangular', 'app.services.UserService']);
+let appModule = angular.module('app', ['ngRoute',
+    'ui.router', 'restangular', 'app.services.UserService']);
 
 appModule
+    .controller('UserListCtrl', UserListCtrl)
     .config(RestangularConfig)
     .config(UIRouteConfig)
     .config(['$httpProvider', function($httpProvider) {
