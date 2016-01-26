@@ -17,6 +17,18 @@
 
 We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward) 
 
+## Angular Typescript Recipes
+
+* [Using ES5 with rutha-2016](https://github.com/molekilla/rutha-2016/tree/angular-es5)
+* [ng-router](https://github.com/molekilla/rutha-2016/tree/angular-training-ngRoute)
+* [Using Angular module with SystemJS - WIP](https://github.com/molekilla/rutha-2016/tree/angular-training-modules-di)
+* [ui-router](https://github.com/molekilla/rutha-2016/tree/angular-training-ui-router)
+* [Services](https://github.com/molekilla/rutha-2016/tree/angular-training-services)
+* [Promises](https://github.com/molekilla/rutha-2016/tree/angular-training-promises)
+* [$http](https://github.com/molekilla/rutha-2016/tree/angular-training-http)
+* [Restangular](https://github.com/molekilla/rutha-2016/tree/angular-training-http-restangular)
+* [Databinding](https://github.com/molekilla/rutha-2016/tree/angular-training-databinding)
+
 ### npm tasks ###
 
 * `npm start`: Serves frontend service with no auto reload
