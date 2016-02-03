@@ -6,14 +6,14 @@ window.__karma__.loaded = function noop() { };
 
 // // Karma serves files here
 System.baseURL = '/base/';
-//System.map.app = 'app';
-// 
-// // use "app" not "app-compiled"
-//delete System.map.app;
-System.paths = {  
-  'angular' : '/base/node_modules/angular/angular.js',
-  'angular-mocks' : '/base/node_modules/angular-mocks/angular-mocks.js',
-  //'jasmine' : '/base/node_modules/jasmine-core/lib/jasmine-core/jasmine.js'
+System.defaultJSExtensions = true;
+
+System.paths = {
+    'underscore': '/base/node_modules/underscore/underscore.js',
+    'restangular': '/base/node_modules/restangular/dist/restangular.js',
+    'angular': '/base/node_modules/angular/angular.js',
+    'angular-mocks': '/base/node_modules/angular-mocks/angular-mocks.js',
+    // 'jasmine': '/base/node_modules/jasmine-core/lib/jasmine-core/jasmine.js'
 };
 
 var TEST_REGEXP = /[\._]spec\.js$/;
@@ -46,11 +46,4 @@ Promise.all(
                 })
                 .then(null, function (error) { console.error('Failed to load:', error); });
         })
-    )
-    // 
-    // ;.then(function () {
-    //     window.__karma__.start();
-    // }, function (error) {
-    //     console.error(error.stack || error);
-    //     window.__karma__.start();
-    // });
+    );
