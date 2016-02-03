@@ -10,7 +10,7 @@
     "build:sass": "node-sass --include-path scss scss/main.scss dist/main.css",
     "sass:w": "node-sass --watch --include-path scss scss/main.scss src/app/css/main.css",
     "start": "concurrent \"npm run sass:w\" \"npm run tsc:w\" \"nodemon lib/hapi/index.js -e js,html\"  ",
-    "test": "grunt test"
+    "test": "karma start src/karma.conf.js"
   },
   "author": "Rogelio Morrell",
   "repository": {
@@ -24,6 +24,10 @@
   "devDependencies": {
     "babel-core": "^6.4.0",
     "concurrently": "^1.0.0",
+    "jasmine-core": "2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
     "live-reload": "^1.1.0",
     "node-sass": "^3.4.2",
     "nodemon": "^1.8.1",

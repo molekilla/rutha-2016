@@ -23,6 +23,7 @@ System.config({
     "npm:*": "node_modules/*"
   },  
   map: {
+    'jasmine': 'npm:jasmine-core/lib/jasmine-core/jasmine',
     '_': 'npm:underscore/underscore.js',
     'restangular': 'npm:restangular/dist/restangular',
     'angular-route': 'npm:angular-route/angular-route',    

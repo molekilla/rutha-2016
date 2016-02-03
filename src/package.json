@@ -8,9 +8,17 @@
     "angular-route": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "bootstrap": "^3.3.6",
+    "es6-module-loader": "^0.17.10",
     "plugin-ng-template": "^0.1.1",
     "restangular": "^1.5.1",
     "systemjs": "0.19.16",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.9",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7"
   }
 }
