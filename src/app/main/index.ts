@@ -3,8 +3,8 @@ import 'angular';
 export class TestController {
   message: String;
 
+  static $inject = ['$scope'];
   constructor($scope: angular.IScope) {
-    $scope.message = 'Hello World';
+    this.message = 'Hello World';
   }
 }
-

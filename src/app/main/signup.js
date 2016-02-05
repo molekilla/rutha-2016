@@ -8,9 +8,10 @@ System.register(['angular'], function(exports_1) {
                 function SignupController($scope, $log) {
                     $log.info('Signup controller');
                 }
+                SignupController.$inject = ['$scope', '$log'];
                 return SignupController;
             })();
-            exports_1("default", SignupController);
+            exports_1("SignupController", SignupController);
         }
     }
 });
