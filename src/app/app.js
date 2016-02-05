@@ -1,6 +1,6 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl'], function(exports_1) {
-    var uiRouteConfig_1, UserListCtrl_1;
+System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter'], function(exports_1) {
+    var uiRouteConfig_1, UserListCtrl_1, Counter_1;
     var appModule;
     function RestangularConfig(RestangularProvider) {
         RestangularProvider.setFullResponse(true);
@@ -19,12 +19,16 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             },
             function (UserListCtrl_1_1) {
                 UserListCtrl_1 = UserListCtrl_1_1;
+            },
+            function (Counter_1_1) {
+                Counter_1 = Counter_1_1;
             }],
         execute: function() {
             RestangularConfig.$inject = ['RestangularProvider'];
             appModule = angular.module('app', ['ngRoute', 'ngMessages',
                 'ui.router', 'restangular', 'app.services.UserService']);
             appModule
+                .directive('counter', Counter_1.Counter.factory())
                 .controller('UserListCtrl', UserListCtrl_1.UserListCtrl)
                 .config(RestangularConfig)
                 .config(uiRouteConfig_1.UIRouteConfig)

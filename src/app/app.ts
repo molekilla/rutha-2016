@@ -9,6 +9,7 @@ import 'angular-messages';
 
 import {UIRouteConfig} from './uiRouteConfig';
 import {UserListCtrl} from './profile/UserListCtrl';
+import {Counter} from './common/directives/Counter';
 
 RestangularConfig.$inject = ['RestangularProvider'];
 function RestangularConfig(RestangularProvider: any) {
@@ -21,6 +22,7 @@ let appModule = angular.module('app', ['ngRoute','ngMessages',
     'ui.router', 'restangular', 'app.services.UserService']);
 
 appModule
+    .directive('counter', Counter.factory())
     .controller('UserListCtrl', UserListCtrl)
     .config(RestangularConfig)
     .config(UIRouteConfig)
