@@ -28,6 +28,9 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [$http](https://github.com/molekilla/rutha-2016/tree/angular-training-http)
 * [Restangular](https://github.com/molekilla/rutha-2016/tree/angular-training-http-restangular)
 * [Databinding](https://github.com/molekilla/rutha-2016/tree/angular-training-databinding)
+* [Forms](https://github.com/molekilla/rutha-2016/tree/angular-training-forms-validations)
+* [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular-training-unit-tests)
+* [Components and Directives](https://github.com/molekilla/rutha-2016/tree/angular-training-component-directives)
 
 ### npm tasks ###
 
