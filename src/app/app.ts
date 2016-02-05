@@ -9,7 +9,10 @@ import 'angular-messages';
 
 import {UIRouteConfig} from './uiRouteConfig';
 import {UserListCtrl} from './profile/UserListCtrl';
-import {Counter} from './common/directives/Counter';
+
+// from https://toddmotto.com/exploring-the-angular-1-5-component-method/
+import {Counter as CounterDirective} from './common/directives/Counter';
+import {Counter as CounterComponent} from './common/components/Counter';
 
 RestangularConfig.$inject = ['RestangularProvider'];
 function RestangularConfig(RestangularProvider: any) {
@@ -22,7 +25,8 @@ let appModule = angular.module('app', ['ngRoute','ngMessages',
     'ui.router', 'restangular', 'app.services.UserService']);
 
 appModule
-    .directive('counter', Counter.factory())
+    .directive('counter', CounterDirective.factory())
+    .component('counterComp', CounterComponent)
     .controller('UserListCtrl', UserListCtrl)
     .config(RestangularConfig)
     .config(UIRouteConfig)

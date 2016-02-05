@@ -1,6 +1,6 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter'], function(exports_1) {
-    var uiRouteConfig_1, UserListCtrl_1, Counter_1;
+System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter', './common/components/Counter'], function(exports_1) {
+    var uiRouteConfig_1, UserListCtrl_1, Counter_1, Counter_2;
     var appModule;
     function RestangularConfig(RestangularProvider) {
         RestangularProvider.setFullResponse(true);
@@ -22,6 +22,9 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             },
             function (Counter_1_1) {
                 Counter_1 = Counter_1_1;
+            },
+            function (Counter_2_1) {
+                Counter_2 = Counter_2_1;
             }],
         execute: function() {
             RestangularConfig.$inject = ['RestangularProvider'];
@@ -29,6 +32,7 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
                 'ui.router', 'restangular', 'app.services.UserService']);
             appModule
                 .directive('counter', Counter_1.Counter.factory())
+                .component('counterComp', Counter_2.Counter)
                 .controller('UserListCtrl', UserListCtrl_1.UserListCtrl)
                 .config(RestangularConfig)
                 .config(uiRouteConfig_1.UIRouteConfig)
