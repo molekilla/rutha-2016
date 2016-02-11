@@ -32,6 +32,9 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular-training-unit-tests)
 * [Components and Directives](https://github.com/molekilla/rutha-2016/tree/angular-training-component-directives)
 
+## Angular2 Recipes
+* [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
+
 ### npm tasks ###
 
 * `npm start`: Serves frontend service with no auto reload
