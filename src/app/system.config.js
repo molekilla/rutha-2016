@@ -20,13 +20,12 @@ System.config({
     "./*": "app/*",
     "assets/*": "assets/*",
     "github:*": "github.com/*",
-    "npm:*": "node_modules/*"
+    "npm:*": "node_modules/*",
+    "angular2/*": "node_modules/angular2/*",
+    "rxjs/*": "node_modules/rxjs/*",
   },  
   map: {
-    '_': 'npm:underscore/underscore.js',
-    'restangular': 'npm:restangular/dist/restangular',
-    'angular-route': 'npm:angular-route/angular-route',    
-    'angular': 'npm:angular/angular',
+    '_': 'npm:underscore/underscore.js',   
     'ng-template': 'npm:plugin-ng-template/ng-template', // buggy
     'text': 'assets/text'
   }
