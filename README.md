@@ -34,6 +34,11 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 
 ## Angular2 Recipes
 * [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
+* [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
+* Forms
+* Services with Promises
+* String (Opaque tokens) DI
+* More ...
 
 ### npm tasks ###
 
