@@ -47,7 +47,7 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * `npm run build:sass`: Builds SASS / CSS bundle
 
 ### Maintainers, notes ###
-Maintain by Rogelio Morrell C. 
+Rogelio Morrell C. 
 
 
 ### Disclaimer ###
