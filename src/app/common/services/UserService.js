@@ -28,6 +28,25 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx']
                 function UserService(http) {
                     this.http = http;
                 }
+                UserService.prototype.login = function (user) {
+                    var body = JSON.stringify({
+                        email: user.username,
+                        password: user.password
+                    });
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_2.RequestOptions({ headers: headers });
+                    return this.http
+                        .post('/auth/login', body, options)
+                        .catch(this.handleError)
+                        .map(function (res) {
+                        if (res.status === 201) {
+                            return { err: null, data: true };
+                        }
+                        else {
+                            return { err: res.json() };
+                        }
+                    });
+                };
                 UserService.prototype.signup = function (user) {
                     var body = JSON.stringify({
                         email: user.username,
@@ -37,18 +56,19 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx']
                     var options = new http_2.RequestOptions({ headers: headers });
                     return this.http
                         .post('/auth/signup', body, options)
+                        .catch(this.handleError)
                         .map(function (res) {
                         if (res.status === 201) {
                             return { err: null, data: true };
                         }
                         else {
-                            return { err: res.json().message };
+                            return { err: res.json() };
                         }
                     });
                 };
                 UserService.prototype.handleError = function (error) {
                     console.error(error);
-                    return Observable_1.Observable.throw(error.json().message || 'Server error');
+                    return Observable_1.Observable.throw(error.json() || 'Server error');
                 };
                 UserService = __decorate([
                     core_1.Injectable(), 

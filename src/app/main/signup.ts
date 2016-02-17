@@ -1,46 +1,50 @@
+import {Router} from 'angular2/router';
 import {Component} from 'angular2/core';
 import {IUserService, UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
 
 @Component({
-    template:
-    `<div class="container">
-  <div class="col-sm-6 col-sm-offset-3">
-    <h1>Signup</h1>
-    <div class="alert alert-danger" *ngIf="errorLabel" role="alert">{{ errorLabel }}</div>
-    <form>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" name="email">
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="password">
-      </div>
-      <button (click)="signup()" type="submit" class="btn btn-warning btn-lg">Signup</button>
-    </form>
-
-    <hr>
-
-    <p>Already have an account ? <a href="#login">Login</a></p>
-
-  </div>
-</div>`
+    styles: [
+        `.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}`,
+        `.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
+}`
+    ],
+    templateUrl: 'public/app/main/signup.html'
 })
 export class SignupComponent {
     errorLabel: string;
+    isValidPassword = true;
+    user = new User();
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService,
+     private router: Router) {
         console.log('Signup controller');
     }
 
+    minLen(val: string, min: number) {
+        if (val && val.length < min) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    passwordMatch(password: string, passwordConfirmation: string) {
+        this.isValidPassword = true;
+        if (password !== passwordConfirmation) {
+            this.isValidPassword = false;
+        }
+    };
+
     signup() {
         this.userService
-            .signup({ username: 'pending@', password: 'password' })
+            .signup(this.user)
             .subscribe(
             resp  => {
                 this.errorLabel = null;
-                //this.$state.go('login.main');
+                this.router.navigate(['Login', { action: 'main' }]);
             },
             error =>
                 this.errorLabel = error.message || "An error ocurred");

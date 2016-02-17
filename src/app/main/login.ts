@@ -1,36 +1,27 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
+import {IUserService, UserService} from '../common/services/UserService';
+import {User} from '../common/models/User';
 
 @Component({
-    template:
-`<div class="container">
-  <div class="col-sm-6 col-sm-offset-3">
-    <h1>{{ title }}</h1>
-    <form action="/auth/login" method="post">
-      <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" name="email">
-      </div>
-      <div class="form-group" ng-if="canReset">
-        <label>Password</label>
-        <input type="password" class="form-control" name="password">
-      </div>
-      <button type="submit" class="btn btn-warning btn-lg">Login</button>
-    </form>
-
-    <hr ng-if="canReset">
-
-    <p ng-if="canReset">Forgot password? <a href="#login/forgot">Reset login</a></p>
-
-  </div>
-</div>`
-
+    styles: [
+        `.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}`,
+        `.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
+}`
+    ],
+    templateUrl: 'public/app/main/login.html'
 })
 export class LoginComponent implements OnInit {
     canReset: boolean;
     title: string;
+    errorLabel: string;
+    user = new User();
 
-    constructor(private _routeParams: RouteParams) {
+    constructor(private userService: UserService,
+        private _routeParams: RouteParams) {
         console.log('Login controller');
         this.canReset = true;
         this.title = 'Login';
@@ -41,5 +32,18 @@ export class LoginComponent implements OnInit {
             this.canReset = false;
             this.title = 'Reset';
         }
+    }
+
+    login() {
+        this.userService
+            .login(this.user)
+            .subscribe(
+            resp  => {
+                console.log('Logged');
+                this.errorLabel = null;
+                //this.router.navigate(['Login', { action: 'main' }]);
+            },
+            error =>
+                this.errorLabel = error.message || "An error ocurred");
     }
 }

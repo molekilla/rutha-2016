@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>Signup</h1>
+        <div class="alert alert-danger" *ngIf="errorLabel" role="alert">{{ errorLabel }}</div>
+        <form #signupForm="ngForm">
+            <div class="form-group">
+                <label>Email</label>
+                <input required [(ngModel)]="user.username" type="text" 
+                class="form-control" ngControl="email" #email="ngForm">
+                <div [hidden]="email.valid || email.pristine" class="has-error">
+                    <div class="help-block">Email is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input required [(ngModel)]="user.password" #password="ngForm"
+                type="password" class="form-control" ngControl="password">
+                <div [hidden]="password.valid || password.pristine" class="has-error">
+                    <div class="help-block">Password is missing</div>
+                </div>                
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" #passwordConfirmation="ngForm" 
+                required class="form-control" ngControl="passwordConfirmation" ng-minlength="5"
+                (change)="passwordMatch(password.value, passwordConfirmation.value)">
+
+                <div class="has-error" [hidden]="isValidPassword">
+                    <div class="help-block">Password does not match</div>
+                </div>
+                <div class="has-error" [hidden]="minLen(passwordConfirmation.value, 5)">
+                    <div class="help-block">Must be 5 chars or more</div>
+                </div>
+                <div class="has-error" [hidden]="passwordConfirmation.valid || passwordConfirmation.pristine">
+                    <div class="help-block">Password confirmation is missing</div>
+                </div>                                
+            </div>
+            <button (click)="signup()" type="submit" 
+            [disabled]="!signupForm.form.valid" class="btn btn-warning btn-lg">Signup</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account ? <a href="#login">Login</a></p>
+
+    </div>
+</div>
