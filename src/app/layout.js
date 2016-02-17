@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './main/index', './main/signup', './main/login'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './main/index', './main/signup', './main/login', 'angular2/http', './common/services/UserService'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './main/index', './main/sig
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, index_1, signup_1, login_1;
+    var core_1, router_1, index_1, signup_1, login_1, http_1, UserService_1;
     var LayoutComponent;
     return {
         setters:[
@@ -26,6 +26,12 @@ System.register(['angular2/core', 'angular2/router', './main/index', './main/sig
             },
             function (login_1_1) {
                 login_1 = login_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (UserService_1_1) {
+                UserService_1 = UserService_1_1;
             }],
         execute: function() {
             LayoutComponent = (function () {
@@ -33,15 +39,20 @@ System.register(['angular2/core', 'angular2/router', './main/index', './main/sig
                     this._router = _router;
                 }
                 LayoutComponent.prototype.ngOnInit = function () {
-                    this._router.navigate(['Index']);
+                    // this._router.navigate(['Index']);
                 };
                 LayoutComponent = __decorate([
                     core_1.Component({
                         selector: 'app-boot',
                         template: "<div>\n         <router-outlet></router-outlet>\n    </div>\n\n    <div class=\"footer\">\n        <div class=\"container\">\n            <p class=\"text-muted\">Rutha / MIT Licensed / Made in Panama.</p>\n        </div>\n    </div>",
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        providers: [
+                            http_1.HTTP_PROVIDERS,
+                            UserService_1.UserService,
+                        ]
                     }),
                     router_1.RouteConfig([
+                        { path: '/', name: '_Index', component: index_1.IndexComponent },
                         { path: '/main', name: 'Index', component: index_1.IndexComponent },
                         { path: '/login/:action', name: 'Login', component: login_1.LoginComponent },
                         { path: '/signup', name: 'Signup', component: signup_1.SignupComponent }

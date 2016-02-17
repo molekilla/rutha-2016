@@ -1,12 +1,14 @@
 import {Component} from 'angular2/core';
+import {IUserService, UserService} from '../common/services/UserService';
+import {User} from '../common/models/User';
 
 @Component({
     template:
     `<div class="container">
   <div class="col-sm-6 col-sm-offset-3">
     <h1>Signup</h1>
- 
-    <form action="/auth/signup" method="post">
+    <div class="alert alert-danger" *ngIf="errorLabel" role="alert">{{ errorLabel }}</div>
+    <form>
       <div class="form-group">
         <label>Email</label>
         <input type="text" class="form-control" name="email">
@@ -15,7 +17,7 @@ import {Component} from 'angular2/core';
         <label>Password</label>
         <input type="password" class="form-control" name="password">
       </div>
-      <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+      <button (click)="signup()" type="submit" class="btn btn-warning btn-lg">Signup</button>
     </form>
 
     <hr>
@@ -26,7 +28,21 @@ import {Component} from 'angular2/core';
 </div>`
 })
 export class SignupComponent {
-  constructor() {
-    console.log('Signup controller');
-  }
+    errorLabel: string;
+
+    constructor(private userService: UserService) {
+        console.log('Signup controller');
+    }
+
+    signup() {
+        this.userService
+            .signup({ username: 'pending@', password: 'password' })
+            .subscribe(
+            resp  => {
+                this.errorLabel = null;
+                //this.$state.go('login.main');
+            },
+            error =>
+                this.errorLabel = error.message || "An error ocurred");
+    }
 }

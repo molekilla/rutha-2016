@@ -42,7 +42,7 @@
     "hapi-auth-cookie": "^3.1.0",
     "inert": "^3.2.0",
     "joi": "7.0.0",
-    "mongoose": "^4.2.4",
+    "mongoose": "4.2.4",
     "rutha-utils": "^1.1.0",
     "underscore": "^1.8.3",
     "vision": "^4.0.0"
