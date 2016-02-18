@@ -39,7 +39,10 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
 * [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
 * Unit Tests
+* Validations
 * Displaying list
+* Pipes
+* Managing state with Redux
 
 ### npm tasks ###
 
