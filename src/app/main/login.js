@@ -47,7 +47,7 @@ System.register(['angular2/core', 'angular2/router', '../common/services/UserSer
                         .subscribe(function (resp) {
                         console.log('Logged');
                         _this.errorLabel = null;
-                        //this.router.navigate(['Login', { action: 'main' }]);
+                        window.location.href = '/profile';
                     }, function (error) {
                         return _this.errorLabel = error.message || "An error ocurred";
                     });
@@ -55,8 +55,8 @@ System.register(['angular2/core', 'angular2/router', '../common/services/UserSer
                 LoginComponent = __decorate([
                     core_1.Component({
                         styles: [
-                            ".ng-valid[required] {\n  border-left: 5px solid #42A948; /* green */\n}",
-                            ".ng-invalid {\n  border-left: 5px solid #a94442; /* red */\n}"
+                            ".ng-valid[required] {\n            border-left: 5px solid #42A948; /* green */\n        }",
+                            ".ng-invalid {\n            border-left: 5px solid #a94442; /* red */\n        }"
                         ],
                         templateUrl: 'public/app/main/login.html'
                     }), 

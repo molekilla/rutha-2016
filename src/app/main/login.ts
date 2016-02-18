@@ -6,11 +6,11 @@ import {User} from '../common/models/User';
 @Component({
     styles: [
         `.ng-valid[required] {
-  border-left: 5px solid #42A948; /* green */
-}`,
+            border-left: 5px solid #42A948; /* green */
+        }`,
         `.ng-invalid {
-  border-left: 5px solid #a94442; /* red */
-}`
+            border-left: 5px solid #a94442; /* red */
+        }`
     ],
     templateUrl: 'public/app/main/login.html'
 })
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
             resp  => {
                 console.log('Logged');
                 this.errorLabel = null;
-                //this.router.navigate(['Login', { action: 'main' }]);
+                window.location.href = '/profile';
             },
             error =>
                 this.errorLabel = error.message || "An error ocurred");
