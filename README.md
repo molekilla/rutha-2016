@@ -36,9 +36,10 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
 * [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
 * [Forms](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
-* Services with Promises
-* String (Opaque tokens) DI
-* More ...
+* [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
+* [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
+* Unit Tests
+* Displaying list
 
 ### npm tasks ###
 
