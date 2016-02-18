@@ -1,6 +1,6 @@
 import {Router} from 'angular2/router';
 import {Component} from 'angular2/core';
-import {IUserService, UserService} from '../common/services/UserService';
+import {UserService2} from '../common/services/UserService2';
 import {User} from '../common/models/User';
 
 @Component({
@@ -19,7 +19,7 @@ export class SignupComponent {
     isValidPassword = true;
     user = new User();
 
-    constructor(private userService: UserService,
+    constructor(private userService: UserService2,
      private router: Router) {
         console.log('Signup controller');
     }
@@ -41,7 +41,7 @@ export class SignupComponent {
     signup() {
         this.userService
             .signup(this.user)
-            .subscribe(
+            .then(
             resp  => {
                 this.errorLabel = null;
                 this.router.navigate(['Login', { action: 'main' }]);

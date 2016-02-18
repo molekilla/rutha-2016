@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../common/services/UserService', '../common/models/User'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../common/services/UserService2', '../common/models/User'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', '../common/services/UserSer
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, UserService_1, User_1;
+    var core_1, router_1, UserService2_1, User_1;
     var LoginComponent;
     return {
         setters:[
@@ -18,8 +18,8 @@ System.register(['angular2/core', 'angular2/router', '../common/services/UserSer
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (UserService_1_1) {
-                UserService_1 = UserService_1_1;
+            function (UserService2_1_1) {
+                UserService2_1 = UserService2_1_1;
             },
             function (User_1_1) {
                 User_1 = User_1_1;
@@ -44,7 +44,7 @@ System.register(['angular2/core', 'angular2/router', '../common/services/UserSer
                     var _this = this;
                     this.userService
                         .login(this.user)
-                        .subscribe(function (resp) {
+                        .then(function (resp) {
                         console.log('Logged');
                         _this.errorLabel = null;
                         window.location.href = '/profile';
@@ -60,7 +60,7 @@ System.register(['angular2/core', 'angular2/router', '../common/services/UserSer
                         ],
                         templateUrl: 'public/app/main/login.html'
                     }), 
-                    __metadata('design:paramtypes', [UserService_1.UserService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [UserService2_1.UserService2, router_1.RouteParams])
                 ], LoginComponent);
                 return LoginComponent;
             })();
