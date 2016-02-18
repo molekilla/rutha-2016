@@ -4,7 +4,7 @@ import {IndexComponent}   from './main/index';
 import {SignupComponent}     from './main/signup';
 import {LoginComponent}     from './main/login';
 import {HTTP_PROVIDERS}    from 'angular2/http';
-import {UserService}       from './common/services/UserService';
+import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider';
 
 @Component({
     selector: 'app-boot',
@@ -21,7 +21,7 @@ import {UserService}       from './common/services/UserService';
     directives: [ROUTER_DIRECTIVES],
     providers: [
         HTTP_PROVIDERS,
-        UserService,
+        USER_SERVICE_PROVIDER
     ]
 })
 @RouteConfig([

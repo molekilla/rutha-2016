@@ -4,11 +4,8 @@ import {Observable}     from 'rxjs/Observable';
 import 'rxjs/Rx';
 import {Headers, RequestOptions} from 'angular2/http';
 import {User} from '../models/User';
+import {IUserService} from './UserServiceProvider';
 
-export interface IUserService {
-    signup(user: User): Observable<any>;
-    login(user: User): Observable<any>;
-}
 
 @Injectable()
 export class UserService implements IUserService {

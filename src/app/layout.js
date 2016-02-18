@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './main/index', './main/signup', './main/login', 'angular2/http', './common/services/UserService'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './main/index', './main/signup', './main/login', 'angular2/http', './common/services/UserServiceProvider'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './main/index', './main/sig
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, index_1, signup_1, login_1, http_1, UserService_1;
+    var core_1, router_1, index_1, signup_1, login_1, http_1, UserServiceProvider_1;
     var LayoutComponent;
     return {
         setters:[
@@ -30,8 +30,8 @@ System.register(['angular2/core', 'angular2/router', './main/index', './main/sig
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (UserService_1_1) {
-                UserService_1 = UserService_1_1;
+            function (UserServiceProvider_1_1) {
+                UserServiceProvider_1 = UserServiceProvider_1_1;
             }],
         execute: function() {
             LayoutComponent = (function () {
@@ -48,7 +48,7 @@ System.register(['angular2/core', 'angular2/router', './main/index', './main/sig
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
                             http_1.HTTP_PROVIDERS,
-                            UserService_1.UserService,
+                            UserServiceProvider_1.USER_SERVICE_PROVIDER
                         ]
                     }),
                     router_1.RouteConfig([
