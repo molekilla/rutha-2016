@@ -35,11 +35,11 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 ## Angular2 Recipes
 * [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
 * [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
-* [Forms](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
+* [Forms with template validations](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
 * [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
 * [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
+* [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
 * Unit Tests
-* Validations
 * Displaying list
 * Pipes
 * Managing state with Redux
