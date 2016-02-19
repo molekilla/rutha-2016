@@ -1,7 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
-import {UserService2} from '../common/services/UserService2';
+import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
+import {FormBuilder, Validators, Control, ControlGroup} from 'angular2/common';
 
 @Component({
     styles: [
@@ -18,13 +19,25 @@ export class LoginComponent implements OnInit {
     canReset: boolean;
     title: string;
     errorLabel: string;
+
+    password: Control;
+    email: Control;
+    loginFormModel: ControlGroup;
     user = new User();
 
-    constructor(private userService: UserService2,
-        private _routeParams: RouteParams) {
+    constructor(private userService: UserService,
+        private _routeParams: RouteParams,
+        private formBuilder: FormBuilder) {
         console.log('Login controller');
         this.canReset = true;
         this.title = 'Login';
+
+        this.password = new Control("", Validators.compose([Validators.required, Validators.minLength(5)]));
+        this.email = new Control("", Validators.compose([Validators.required, this.checkEmail]));
+        this.loginFormModel = formBuilder.group({
+            email: this.email,
+            password: this.password
+        });
     }
 
     ngOnInit() {
@@ -34,10 +47,18 @@ export class LoginComponent implements OnInit {
         }
     }
 
+    checkEmail(field: Control) {
+        if (field.value && field.value.toString().indexOf('@') > 0) {
+            return null;
+        } else {
+            return { invalidEmail: true };
+        }
+    }
+
     login() {
         this.userService
             .login(this.user)
-            .then(
+            .subscribe(
             resp  => {
                 console.log('Logged');
                 this.errorLabel = null;

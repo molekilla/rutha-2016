@@ -9,4 +9,4 @@ export interface IUserService {
     login(user: User): Observable<any>;
 }
 
-export let USER_SERVICE_PROVIDER = provide(UserService2, { useClass: UserService2 });
+export let USER_SERVICE_PROVIDER = provide(UserService, { useClass: UserService });
