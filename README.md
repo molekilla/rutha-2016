@@ -28,17 +28,21 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [$http](https://github.com/molekilla/rutha-2016/tree/angular-training-http)
 * [Restangular](https://github.com/molekilla/rutha-2016/tree/angular-training-http-restangular)
 * [Databinding](https://github.com/molekilla/rutha-2016/tree/angular-training-databinding)
-* [Forms](https://github.com/molekilla/rutha-2016/tree/angular-training-forms-validations)
+* [Forms](https://github.com/molekilla/rutha-2016/tree/angular-training-form-validations)
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular-training-unit-tests)
 * [Components and Directives](https://github.com/molekilla/rutha-2016/tree/angular-training-component-directives)
 
 ## Angular2 Recipes
 * [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
 * [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
-* [Forms](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
-* Services with Promises
-* String (Opaque tokens) DI
-* More ...
+* [Forms with template validations](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
+* [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
+* [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
+* [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
+* Unit Tests
+* Displaying list
+* Pipes
+* Managing state with Redux
 
 ### npm tasks ###
 
