@@ -29,7 +29,7 @@
     "nodemon": "^1.8.1",
     "systemjs": "^0.19.16",
     "systemjs-builder": "^0.15.3",
-    "typescript": "^1.8.0"
+    "typescript": "1.7.5"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
