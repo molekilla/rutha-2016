@@ -1,5 +1,6 @@
 # rutha-2016
-## a lean, npm based, hapi based, angular 1 or 2 boilerplate with recipes
+## a lean, npm based, hapi based
+### angular 1 or 2 boilerplate with recipes
 
 
 ## Works
@@ -13,10 +14,13 @@
 * MongoDB 3.x
 * Typescript 1.7.5 (do not use 1.8 yet)
 * Node 4.2.x or later
-* TSD
+* TSD (we'll migrate to [Typings](https://github.com/typings/typings) eventually)
+
+### Preinstall requisites
 
 1. npm install nodemon -g
 2. npm install typescript@1.7.5 -g
+3. npm install tsd -g
 
 ## Installing master - Angular 1
 
