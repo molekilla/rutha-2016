@@ -1,17 +1,39 @@
 # rutha-2016
-## an hapi/angular boilerplate
+## a lean, npm based, hapi based, angular 1 or 2 boilerplate with recipes
+
+
+## Works
+
+* Ubuntu
+* Windows
+* OSX (likely :) )
 
 ## Requires
 
-* Typescript 1.7.x or later
+* MongoDB 3.x
+* Typescript 1.7.5 (do not use 1.8 yet)
 * Node 4.2.x or later
 * TSD
 
-## Installing
+1. npm install nodemon -g
+2. npm install typescript@1.7.5 -g
+
+## Installing master - Angular 1
 
 1. npm install
 2. npm install src/package.json
 3. tsd install
+
+## Installing Angular 2
+
+1. npm install
+2. npm install src/package.json
+3. (Optional, for Jasmine types) tsd install
+
+## Ignore these errors (and how to avoid them)
+
+1. `Error: listen EADDRINUSE :::9091`, this is live reload complaining. Don't want autoreload? Remove the restart event in nodemon.json
+2. `src/app/app.ts(15,23): error TS2307: Cannot find module './main/signup.html!text'.`, typescript can't parse SystemJS plugins. You might want to try [plugin-typescript](https://github.com/frankwallis/plugin-typescript)
 
 ## Guidelines for rutha 2016
 
