@@ -1,13 +1,24 @@
-System.register(['angular2/testing', 'angular2/core', '../app/common/services/UserService', 'rxjs/Observable', 'rxjs/Rx'], function(exports_1) {
-    var testing_1, core_1, UserService_1, Observable_1;
-    var MockTestService;
+System.register(['angular2/testing', 'angular2/core', '../app/common/services/UserService', 'rxjs/Rx', 'angular2/http', 'angular2/http/testing'], function(exports_1) {
+    var testing_1, core_1, UserService_1, http_1, testing_2;
     function main() {
         testing_1.beforeEachProviders(function () { return [
-            core_1.provide(UserService_1.UserService, { useClass: MockTestService })
+            UserService_1.UserService,
+            http_1.BaseRequestOptions,
+            testing_2.MockBackend,
+            core_1.provide(http_1.Http, {
+                useFactory: function (backend, defaultOptions) {
+                    return new http_1.Http(backend, defaultOptions);
+                },
+                deps: [testing_2.MockBackend, http_1.BaseRequestOptions]
+            })
         ]; });
+        testing_1.beforeEach(testing_1.inject([testing_2.MockBackend], function (backend) {
+            var baseResponse = new http_1.Response(new http_1.ResponseOptions({ body: 'got response' }));
+            backend.connections.subscribe(function (c) { return c.mockRespond(baseResponse); });
+        }));
         testing_1.describe('UserService', function () {
             testing_1.it('should load service', testing_1.inject([UserService_1.UserService], function (userService) {
-                testing_1.expect(UserService_1.UserService).toBeAnInstanceOf(MockTestService);
+                testing_1.expect(userService).toBeAnInstanceOf(UserService_1.UserService);
             }));
             // describe('UserService.Login', () => {
             //     it('should login OK', () => {
@@ -37,22 +48,14 @@ System.register(['angular2/testing', 'angular2/core', '../app/common/services/Us
             function (UserService_1_1) {
                 UserService_1 = UserService_1_1;
             },
-            function (Observable_1_1) {
-                Observable_1 = Observable_1_1;
+            function (_1) {},
+            function (http_1_1) {
+                http_1 = http_1_1;
             },
-            function (_1) {}],
+            function (testing_2_1) {
+                testing_2 = testing_2_1;
+            }],
         execute: function() {
-            MockTestService = (function () {
-                function MockTestService() {
-                }
-                MockTestService.prototype.login = function () {
-                    return Observable_1.Observable.empty();
-                };
-                MockTestService.prototype.signup = function () {
-                    return Observable_1.Observable.empty();
-                };
-                return MockTestService;
-            })();
         }
     }
 });

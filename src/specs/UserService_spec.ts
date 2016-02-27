@@ -1,32 +1,35 @@
-import {BaseRequestOptions, Http} from 'angular2/http';
+// From https://developers.livechatinc.com/blog/testing-angular-2-apps-routeroutlet-and-http/
 import {it, describe, expect, beforeEachProviders, beforeEach, inject} from 'angular2/testing';
 import {Injector, provide} from 'angular2/core';
 import {UserService} from '../app/common/services/UserService';
 import {IUserService} from '../app/common/services/UserServiceProvider';
 import {Observable}     from 'rxjs/Observable';
 import 'rxjs/Rx';
-
-class MockTestService implements IUserService {
-    public login(): Observable<any> {
-        return Observable.empty();
-    }
-
-    public signup(): Observable<any> {
-        return Observable.empty();
-    }
-}
+import {BaseRequestOptions, Response, ResponseOptions, Http} from 'angular2/http';
+import {MockBackend, MockConnection} from 'angular2/http/testing';
 
 export function main() {
 
     beforeEachProviders(() => [
-        provide(UserService, { useClass: MockTestService })
+        UserService,
+        BaseRequestOptions,
+        MockBackend,
+        provide(Http, {
+            useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
+                return new Http(backend, defaultOptions);
+            },
+            deps: [MockBackend, BaseRequestOptions]
+        })
     ]);
 
+    beforeEach(inject([MockBackend], (backend: MockBackend) => {
+        const baseResponse = new Response(new ResponseOptions({ body: 'got response' }));
+        backend.connections.subscribe((c: MockConnection) => c.mockRespond(baseResponse));
+    }));
 
     describe('UserService', () => {
         it('should load service', inject([UserService], (userService: UserService) => {
-
-            expect(UserService).toBeAnInstanceOf(MockTestService);
+            expect(userService).toBeAnInstanceOf(UserService);
         }));
         // describe('UserService.Login', () => {
         //     it('should login OK', () => {
