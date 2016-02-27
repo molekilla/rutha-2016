@@ -65,7 +65,7 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
 * [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
 * [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
-* Unit Tests
+* [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
 * Displaying list
 * Pipes
 * Managing state with Redux
@@ -75,6 +75,11 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * `npm start`: Serves frontend service with auto reload
 * `npm run build:js`: Builds javascript bundle
 * `npm run build:sass`: Builds SASS / CSS bundle
+
+## Other seeds
+
+* https://github.com/mgechev/angular2-seed
+
 
 ### Maintainers, notes ###
 Rogelio Morrell C. 
