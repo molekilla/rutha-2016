@@ -66,7 +66,7 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
 * [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
-* Displaying list
+* [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
 * Pipes
 * Managing state with Redux
 
