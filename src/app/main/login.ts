@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
             resp  => {
                 console.log('Logged');
                 this.errorLabel = null;
-                window.location.href = '/profile';
+                window.location.href = '/profile#dashboard';
             },
             error =>
                 this.errorLabel = error.message || "An error ocurred");

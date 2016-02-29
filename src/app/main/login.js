@@ -65,7 +65,7 @@ System.register(['angular2/core', 'angular2/router', '../common/services/UserSer
                         .subscribe(function (resp) {
                         console.log('Logged');
                         _this.errorLabel = null;
-                        window.location.href = '/profile';
+                        window.location.href = '/profile#dashboard';
                     }, function (error) {
                         return _this.errorLabel = error.message || "An error ocurred";
                     });

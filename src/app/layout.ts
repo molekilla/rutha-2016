@@ -3,13 +3,14 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {IndexComponent}   from './main/index';
 import {SignupComponent}     from './main/signup';
 import {LoginComponent}     from './main/login';
+import {DashboardComponent}     from './main/dashboard';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider';
 
 @Component({
     selector: 'app-boot',
     template:
-    `<div>
+    `<div class="container">
          <router-outlet></router-outlet>
     </div>
 
@@ -28,7 +29,8 @@ import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider
     { path: '/', name: '_Index', component: IndexComponent },
     { path: '/main', name: 'Index', component: IndexComponent },
     { path: '/login/:action', name: 'Login', component: LoginComponent },
-    { path: '/signup', name: 'Signup', component: SignupComponent }
+    { path: '/signup', name: 'Signup', component: SignupComponent },
+    { path: '/dashboard', name: 'Dashboard', component: DashboardComponent }
 ])
 export class LayoutComponent implements OnInit {
     constructor(private _router: Router) {

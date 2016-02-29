@@ -10,7 +10,34 @@ import {IUserService} from './UserServiceProvider';
 @Injectable()
 export class UserService implements IUserService {
 
-    constructor(private http: Http) { }
+    constructor(private http: Http) {
+        // https://github.com/angular/http/issues/65
+        // TODO: Use official Angular2 CORS support when merged (https://github.com/angular/angular/issues/4231).
+        let _build = (<any>http)._backend._browserXHR.build;
+        (<any>http)._backend._browserXHR.build = () => {
+            let _xhr = _build();
+            _xhr.withCredentials = true;
+            return _xhr;
+        };
+    }
+
+    list(): Observable<any> {
+
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http
+            .get('/users', options)
+            .catch(this.handleError)
+            .map(res => {
+                if (res.status === 200) {
+                    return { err: null, data:res.json().map( i => {
+                        return new User(i.email);
+                    }) };
+                } else {
+                    return { err: res.json() };
+                }
+            });
+    }
 
     login(user: User): Observable<any> {
 

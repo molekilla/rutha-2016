@@ -6,6 +6,7 @@
 <!--<![endif]-->
 
 <head>
+    <base href="/">
     <title>
         <%- title %>
     </title>
@@ -16,17 +17,17 @@
     <meta name="description" content="Plain HTML template">
     <meta name="author" content="Rutha">
     <link rel="stylesheet" href="../public/app/css/main.css">
-
     <script src="../public/node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="../public/node_modules/systemjs/dist/system-polyfills.js"></script>
     <script src="../public/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+
     <script src="../public/node_modules/systemjs/dist/system.src.js"></script>
     <script src="../public/app/system.config.js"></script>
     <script>
         System.import('app/app.js');
     </script>
+    <script src="//localhost:9091"></script>
 </head>
-<script src="//localhost:9091"></script>
 
 <body>
 
@@ -51,20 +52,7 @@
             <!--/.nav-collapse -->
         </div>
     </div>
-    <!-- Begin page content -->
-    <div class="container">
-        <div class="page-header">
-            <h1>Hello Hejsan Hola Rutha!</h1>
-        </div>
-        <p class="lead">Secure page</p>
-
-    </div>
-
-    <div class="footer">
-        <div class="container">
-            <p class="text-muted">Rutha / MIT Licensed / Made in Panama.</p>
-        </div>
-    </div>
+    <app-boot  class="container">Index</app-boot>
 
 </body>
 
