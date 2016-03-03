@@ -91,7 +91,7 @@ to be added to the Angular module array, like:
 ```
 
 With SystemJS, is a no longer the case (and there might a better trick I haven't seen), but two methods describe how we could do it
-and keeping sanity.
+and keep sanity.
 
 #### Load at boot time
 
