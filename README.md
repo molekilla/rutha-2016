@@ -47,7 +47,7 @@ a special ES6 loader is required.
 There are many ES6 loaders, the most used in Angular circles are SystemJS and Webpack, in this case we
 use SystemJS as it is the one also used in Angular 2.
 
-## Mapping modules in SystemJS
+### Mapping modules in SystemJS
 
 Let's go through each config
 
@@ -85,7 +85,7 @@ System.config({
 SystemJS is indeed complex and they are many different ways to configure it correctly with Angular.
 For our purposes, this should do the work.
 
-## Bootstrapping app.js with SystemJS
+### Bootstrapping app.js with SystemJS
 
 So far we have:
 
@@ -128,7 +128,7 @@ first thing is to register any ES6 dependency defined in the module. The Angular
 angular.bootstrap(document, ['app']);
 ```
 
-## Using imports
+### Using imports
 
 Our final app.ts (app.js) uses imports and no longer depends on `angular.module` for module loading. 
 
