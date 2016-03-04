@@ -5,7 +5,7 @@
         "angular2": "2.0.0-beta.3",
         "bootstrap": "^3.3.6",
         "plugin-ng-template": "^0.1.1",
-        "systemjs": "0.19.18",
+        "systemjs": "0.19.22",
         "underscore": "^1.8.3",
         "es6-promise": "^3.0.2",
         "es6-shim": "^0.33.3",

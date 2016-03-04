@@ -1,7 +1,7 @@
 /*globals System:true*/
 // Configure module loader
 System.config({
-  baseURL: 'public/',
+  baseURL: '/',
   defaultJSExtensions: true,
   meta: {
     './**/*.html': {
