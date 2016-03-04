@@ -11,15 +11,15 @@
 
 ## Requires
 
-* MongoDB 3.x
-* Typescript 1.7.5 (do not use 1.8 yet)
+* (Optional) MongoDB 3.x
+* Typescript 1.8.7
 * Node 4.2.x or later
 * TSD (we'll migrate to [Typings](https://github.com/typings/typings) eventually)
 
 ### Preinstall requisites
 
 1. npm install nodemon -g
-2. npm install typescript@1.7.5 -g
+2. npm install typescript@1.8.7 -g
 3. npm install tsd -g
 
 ## Installing master - Angular 1
@@ -33,6 +33,21 @@
 1. npm install
 2. npm install src/package.json
 3. (Optional, for Jasmine types) tsd install
+
+
+### npm tasks ###
+
+* `npm run start:lite`: Serves frontend using lite-server with auto reload
+* `npm run start:hapi`: Serves frontend using hapi with auto reload
+* `npm run build:js`: Builds javascript bundle
+* `npm run build:sass`: Builds SASS / CSS bundle
+* `npm test`
+
+### source mappings
+
+* hapi: public/ -> src/
+* lite: src/ -> src/
+* build: src/ -> src/
 
 ## Ignore these errors (and how to avoid them)
 
@@ -69,12 +84,6 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
 * Pipes
 * Managing state with Redux
-
-### npm tasks ###
-
-* `npm start`: Serves frontend service with auto reload
-* `npm run build:js`: Builds javascript bundle
-* `npm run build:sass`: Builds SASS / CSS bundle
 
 ## Other seeds
 

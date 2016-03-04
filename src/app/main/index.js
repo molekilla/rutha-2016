@@ -1,4 +1,6 @@
-System.register(['angular'], function(exports_1) {
+System.register(['angular'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var TestController;
     return {
         setters:[
@@ -10,7 +12,7 @@ System.register(['angular'], function(exports_1) {
                 }
                 TestController.$inject = ['$scope'];
                 return TestController;
-            })();
+            }());
             exports_1("TestController", TestController);
         }
     }
