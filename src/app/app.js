@@ -1,7 +1,5 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', '_', 'restangular', 'angular-route', './main/index', './main/login', './main/signup', './main/index.html!text', './main/login.html!text', './main/signup.html!text'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular', '_', 'restangular', 'angular-route', './main/index', './main/login', './main/signup', './main/index.html!text', './main/login.html!text', './main/signup.html!text'], function(exports_1) {
     var index_1, login_1, signup_1, index_html_text_1, login_html_text_1, signup_html_text_1;
     function RestangularConfig(RestangularProvider) {
         RestangularProvider.setFullResponse(true);

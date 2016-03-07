@@ -14,25 +14,29 @@
 * (Optional) MongoDB 3.x
 * Typescript 1.8.7
 * Node 4.2.x or later
-* TSD (we'll migrate to [Typings](https://github.com/typings/typings) eventually)
+* tsd or typings
 
 ### Preinstall requisites
 
 1. npm install nodemon -g
 2. npm install typescript@1.8.7 -g
-3. npm install tsd -g
+3. npm install tsd -g (or npm install typings -g)
 
 ## Installing master - Angular 1
 
 1. npm install
 2. npm install src/package.json
-3. tsd install
+3. tsd install (or typings install)
 
 ## Installing Angular 2
 
 1. npm install
 2. npm install src/package.json
-3. (Optional, for Jasmine types) tsd install
+3. (Optional, for Jasmine types) tsd install (or typings install)
+
+### why typings ?
+
+More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.html)
 
 
 ### npm tasks ###

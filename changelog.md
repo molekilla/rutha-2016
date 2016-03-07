@@ -4,6 +4,10 @@
 ### Changelog ###
 
 
+#### 1.0.1
+
+* Added Typings
+
 #### 1.0.0
 
 * Bump dependencies
