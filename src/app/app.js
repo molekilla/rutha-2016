@@ -1,3 +1,4 @@
+///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
 System.register(['angular2/platform/browser', './layout', 'angular2/router', 'angular2/core'], function(exports_1) {
     var browser_1, layout_1, router_1, core_1, router_2;
     return {
