@@ -1,7 +1,8 @@
 import {Router, RouteParams} from 'angular2/router';
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, OnDestroy, Inject} from 'angular2/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
+import {UserActions} from '../common/actions/users';
 
 @Component({
 
@@ -18,24 +19,43 @@ import {User} from '../common/models/User';
     </table>
     </div>`
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
     message: string = "hello world";
     errorLabel: string;
     users: Array<User>;
+    unsubscribe: any;
 
-    constructor(private router: Router, private userService: UserService) {
+    constructor(
+        @Inject('AppStore') private appStore: any,
+        private router: Router, 
+        private actions: UserActions,
+        private userService: UserService) {
         this.users = new Array<User>();
     }
 
+    ngOnDestroy() {
+        //remove listener
+        this.unsubscribe();
+    }
+
     ngOnInit() {
-        this.userService
-            .list()
-            .subscribe(
-            resp  => {
-                this.users = resp.data;
-                this.errorLabel = null;
-            },
-            error =>
-                this.errorLabel = error.message || "An error ocurred");
+        //subscribe listener to state changes
+        this.appStore.dispatch(
+            this.actions.list()
+        );
+        this.unsubscribe = this.appStore.subscribe(function listener() {
+            let state = this.appStore.getState();
+            this.users = state.users;
+            debugger
+        });
+        // this.userService
+        //     .list()
+        //     .subscribe(
+        //     resp  => {
+        //         this.users = resp.data;
+        //         this.errorLabel = null;
+        //     },
+        //     error =>
+        //         this.errorLabel = error.message || "An error ocurred");
     }
 }

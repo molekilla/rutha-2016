@@ -23,9 +23,28 @@ export class UserService2 {
             .post('/auth/login', body, options)
             .toPromise()
             .catch(this.handleError)
-            .then(res => {
+            .then(res => {debugger
                 if (res.status === 201) {
                     return { err: null, data: true };
+                } else {
+                    return { err: res.json() };
+                }
+            });
+    }
+
+    list(): Promise<any> {
+
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http
+            .get('/users', options)
+            .toPromise()
+            .catch(this.handleError)
+            .then(res => {
+                if (res.status === 200) {
+                    return { err: null, data: res.json().map( i => {
+                        return new User(i.email);
+                    }) };
                 } else {
                     return { err: res.json() };
                 }

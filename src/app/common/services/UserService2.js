@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', '../models/User'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, http_2;
+    var core_1, http_1, http_2, User_1;
     var UserService2;
     return {
         setters:[
@@ -18,6 +18,9 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
             function (http_1_1) {
                 http_1 = http_1_1;
                 http_2 = http_1_1;
+            },
+            function (User_1_1) {
+                User_1 = User_1_1;
             }],
         execute: function() {
             UserService2 = (function () {
@@ -36,8 +39,27 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
                         .toPromise()
                         .catch(this.handleError)
                         .then(function (res) {
+                        debugger;
                         if (res.status === 201) {
                             return { err: null, data: true };
+                        }
+                        else {
+                            return { err: res.json() };
+                        }
+                    });
+                };
+                UserService2.prototype.list = function () {
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_2.RequestOptions({ headers: headers });
+                    return this.http
+                        .get('/users', options)
+                        .toPromise()
+                        .catch(this.handleError)
+                        .then(function (res) {
+                        if (res.status === 200) {
+                            return { err: null, data: res.json().map(function (i) {
+                                    return new User_1.User(i.email);
+                                }) };
                         }
                         else {
                             return { err: res.json() };

@@ -1,4 +1,4 @@
-System.register(['angular2/router', 'angular2/core', '../common/services/UserService'], function(exports_1) {
+System.register(['angular2/router', 'angular2/core', '../common/services/UserService', '../common/actions/users'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,10 @@ System.register(['angular2/router', 'angular2/core', '../common/services/UserSer
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var router_1, core_1, UserService_1;
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+    var router_1, core_1, UserService_1, users_1;
     var DashboardComponent;
     return {
         setters:[
@@ -20,31 +23,48 @@ System.register(['angular2/router', 'angular2/core', '../common/services/UserSer
             },
             function (UserService_1_1) {
                 UserService_1 = UserService_1_1;
+            },
+            function (users_1_1) {
+                users_1 = users_1_1;
             }],
         execute: function() {
             DashboardComponent = (function () {
-                function DashboardComponent(router, userService) {
+                function DashboardComponent(appStore, router, actions, userService) {
+                    this.appStore = appStore;
                     this.router = router;
+                    this.actions = actions;
                     this.userService = userService;
                     this.message = "hello world";
                     this.users = new Array();
                 }
+                DashboardComponent.prototype.ngOnDestroy = function () {
+                    //remove listener
+                    this.unsubscribe();
+                };
                 DashboardComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this.userService
-                        .list()
-                        .subscribe(function (resp) {
-                        _this.users = resp.data;
-                        _this.errorLabel = null;
-                    }, function (error) {
-                        return _this.errorLabel = error.message || "An error ocurred";
+                    //subscribe listener to state changes
+                    this.appStore.dispatch(this.actions.list());
+                    this.unsubscribe = this.appStore.subscribe(function listener() {
+                        var state = this.appStore.getState();
+                        this.users = state.users;
+                        debugger;
                     });
+                    // this.userService
+                    //     .list()
+                    //     .subscribe(
+                    //     resp  => {
+                    //         this.users = resp.data;
+                    //         this.errorLabel = null;
+                    //     },
+                    //     error =>
+                    //         this.errorLabel = error.message || "An error ocurred");
                 };
                 DashboardComponent = __decorate([
                     core_1.Component({
                         template: "<div class=\"toolbar-spacer\">\n    <div class=\"alert alert-danger\" *ngIf=\"errorLabel\" role=\"alert\">{{ errorLabel }}</div>\n    <table class=\"table\">\n    <thead><tr><th>Username</th></tr></thead>\n    <tbody>\n      <tr *ngFor=\"#item of users\">\n      <td>{{ item.username }}</td>\n      </tr>\n      </tbody>\n    </table>\n    </div>"
-                    }), 
-                    __metadata('design:paramtypes', [router_1.Router, UserService_1.UserService])
+                    }),
+                    __param(0, core_1.Inject('AppStore')), 
+                    __metadata('design:paramtypes', [Object, router_1.Router, users_1.UserActions, UserService_1.UserService])
                 ], DashboardComponent);
                 return DashboardComponent;
             })();
