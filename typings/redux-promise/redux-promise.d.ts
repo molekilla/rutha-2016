@@ -1,15 +1,18 @@
-declare namespace ReduxPromise {
-        interface MiddlewareArg {
-        dispatch: any;
-        getState: Function;
-    }
+// Type definitions for redux-promise
+// Project: https://github.com/acdlite/redux-promise
+// Definitions by: molekilla <https://github.com/molekilla>
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-    interface Middleware extends Function {
-        (obj: MiddlewareArg): Function;
+/// <reference path="../redux/redux.d.ts" />
+
+declare namespace ReduxPromise {
+    export interface Promise extends Redux.Middleware {}
+    export interface PromiseInterface {
+      <T>(dispatch: Redux.Dispatch, getState?: () => T): any;
     }
-    export function promiseMiddleware(_ref): Middleware;
 }
 
-declare module 'redux-promise' {
-    export = ReduxPromise;
+declare module "redux-promise" {
+    var promise: ReduxPromise.Promise;
+    export default promise;
 }

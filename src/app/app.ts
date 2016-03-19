@@ -8,12 +8,12 @@ import {LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {createStore, applyMiddleware} from  'redux';
 import {UserActions} from './common/actions/users';
 import {UserReducer} from './common/reducers/users';
-//import {promiseMiddleware} from 'redux-promise';
+import promise from 'redux-promise';
 
-const appStore = createStore(UserReducer);
-// , applyMiddleware(
-//     promiseMiddleware
-//   )
+const appStore = createStore(UserReducer, applyMiddleware(
+    promise
+  ));
+
 bootstrap(LayoutComponent, [
     ROUTER_PROVIDERS,
     provide('AppStore', { useValue: appStore }),
