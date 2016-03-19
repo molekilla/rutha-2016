@@ -43,12 +43,12 @@ System.register(['angular2/router', 'angular2/core', '../common/services/UserSer
                 };
                 DashboardComponent.prototype.ngOnInit = function () {
                     //subscribe listener to state changes
-                    this.appStore.dispatch(this.actions.list());
-                    this.unsubscribe = this.appStore.subscribe(function listener() {
-                        var state = this.appStore.getState();
-                        this.users = state.users;
-                        debugger;
+                    var _this = this;
+                    this.unsubscribe = this.appStore.subscribe(function () {
+                        var state = _this.appStore.getState();
+                        _this.users = state.users;
                     });
+                    this.appStore.dispatch(this.actions.list());
                     // this.userService
                     //     .list()
                     //     .subscribe(

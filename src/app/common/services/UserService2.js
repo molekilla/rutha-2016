@@ -39,7 +39,6 @@ System.register(['angular2/core', 'angular2/http', '../models/User'], function(e
                         .toPromise()
                         .catch(this.handleError)
                         .then(function (res) {
-                        debugger;
                         if (res.status === 201) {
                             return { err: null, data: true };
                         }
@@ -57,12 +56,12 @@ System.register(['angular2/core', 'angular2/http', '../models/User'], function(e
                         .catch(this.handleError)
                         .then(function (res) {
                         if (res.status === 200) {
-                            return { err: null, data: res.json().map(function (i) {
-                                    return new User_1.User(i.email);
-                                }) };
+                            return Promise.resolve(res.json().map(function (i) {
+                                return new User_1.User(i.email);
+                            }));
                         }
                         else {
-                            return { err: res.json() };
+                            return Promise.reject(res.json());
                         }
                     });
                 };

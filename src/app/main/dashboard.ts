@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     constructor(
         @Inject('AppStore') private appStore: any,
-        private router: Router, 
+        private router: Router,
         private actions: UserActions,
         private userService: UserService) {
         this.users = new Array<User>();
@@ -40,14 +40,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         //subscribe listener to state changes
-        this.appStore.dispatch(
-            this.actions.list()
-        );
-        this.unsubscribe = this.appStore.subscribe(function listener() {
+
+        this.unsubscribe = this.appStore.subscribe(() => {
             let state = this.appStore.getState();
             this.users = state.users;
-            debugger
         });
+
+        this.appStore.dispatch(
+            this.actions.list()
+        );        
         // this.userService
         //     .list()
         //     .subscribe(

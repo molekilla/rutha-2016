@@ -26,13 +26,18 @@ System.register(['../constants/users', 'redux-actions', '../services/UserService
             }],
         execute: function() {
             UserActions = (function () {
-                function UserActions() {
-                    this.list = redux_actions_1.createAction(users_1.LIST_USERS, this.userService.list);
+                function UserActions(userService) {
+                    var _this = this;
+                    this.userService = userService;
+                    // thunkify
+                    this.list = redux_actions_1.createAction(users_1.LIST_USERS, function () {
+                        return _this.userService.list();
+                    });
                 }
-                __decorate([
-                    core_1.Inject('UserService2'), 
-                    __metadata('design:type', UserService2_1.UserService2)
-                ], UserActions.prototype, "userService", void 0);
+                UserActions = __decorate([
+                    core_1.Injectable(), 
+                    __metadata('design:paramtypes', [UserService2_1.UserService2])
+                ], UserActions);
                 return UserActions;
             })();
             exports_1("UserActions", UserActions);

@@ -6,12 +6,15 @@ import {ROUTER_PROVIDERS} from 'angular2/router';
 import {provide}           from 'angular2/core';
 import {LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {createStore, applyMiddleware} from  'redux';
-import {UserActions} from './common/actions/users';
+import createLogger from 'redux-logger';
+
 import {UserReducer} from './common/reducers/users';
 import promise from 'redux-promise';
 
+const reduxLogger = createLogger();
 const appStore = createStore(UserReducer, applyMiddleware(
-    promise
+    promise,
+    reduxLogger
   ));
 
 bootstrap(LayoutComponent, [

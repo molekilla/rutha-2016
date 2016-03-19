@@ -23,7 +23,7 @@ export class UserService2 {
             .post('/auth/login', body, options)
             .toPromise()
             .catch(this.handleError)
-            .then(res => {debugger
+            .then(res => {
                 if (res.status === 201) {
                     return { err: null, data: true };
                 } else {
@@ -32,7 +32,7 @@ export class UserService2 {
             });
     }
 
-    list(): Promise<any> {
+    list(): any {
 
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
@@ -42,11 +42,12 @@ export class UserService2 {
             .catch(this.handleError)
             .then(res => {
                 if (res.status === 200) {
-                    return { err: null, data: res.json().map( i => {
+                    return Promise.resolve(res.json().map(i => {
                         return new User(i.email);
-                    }) };
+                    }));
+
                 } else {
-                    return { err: res.json() };
+                    return Promise.reject(res.json());
                 }
             });
     }

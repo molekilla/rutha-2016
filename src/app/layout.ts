@@ -6,6 +6,8 @@ import {LoginComponent}     from './main/login';
 import {DashboardComponent}     from './main/dashboard';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider';
+import {UserActions} from './common/actions/users';
+import {UserService2} from './common/services/UserService2';
 
 @Component({
     selector: 'app-boot',
@@ -21,6 +23,8 @@ import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider
     </div>`,
     directives: [ROUTER_DIRECTIVES],
     providers: [
+        UserActions,
+        UserService2,
         HTTP_PROVIDERS,
         USER_SERVICE_PROVIDER
     ]

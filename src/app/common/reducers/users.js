@@ -4,22 +4,10 @@ System.register(['../constants/users'], function(exports_1) {
     function UserReducer(state, action) {
         if (state === void 0) { state = initialState; }
         switch (action.type) {
-            case users_1.ADD_USER:
-                return {
-                    users: state.users.concat(action.payload),
-                    currentFilter: state.currentFilter
-                };
             case users_1.LIST_USERS:
-                debugger;
                 return {
-                    users: state.users.map(function (u) { return u; }),
-                    currentFilter: state.currentFilter
+                    users: action.payload.map(function (u) { return u; })
                 };
-            // case REMOVE_USER:
-            //     return {
-            //         users: state.users.filter(todo => todo.id != action.id),
-            //         currentFilter: state.currentFilter
-            //     };
             default:
                 return state;
         }
@@ -32,8 +20,7 @@ System.register(['../constants/users'], function(exports_1) {
             }],
         execute: function() {
             initialState = {
-                users: new Array(),
-                currentFilter: 'SHOW_ALL'
+                users: new Array()
             };
             ;
         }
