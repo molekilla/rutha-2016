@@ -1,5 +1,7 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', './uiRouteConfig'], function(exports_1) {
+System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', './uiRouteConfig'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var uiRouteConfig_1;
     function RestangularConfig(RestangularProvider) {
         RestangularProvider.setFullResponse(true);
