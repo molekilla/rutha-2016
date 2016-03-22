@@ -2,15 +2,15 @@
   "name": "rutha-2016",
   "version": "0.1.0",
   "dependencies": {
-    "angular": "^1.4.8",
+    "angular": "^1.5.0",
     "angular-bootstrap": "^0.12.2",
-    "angular-messages": "^1.4.8",
-    "angular-route": "^1.4.8",
+    "angular-messages": "^1.5.0",
+    "angular-route": "^1.5.0",
     "angular-ui-router": "^0.2.15",
     "bootstrap": "^3.3.6",
     "plugin-ng-template": "^0.1.1",
     "restangular": "^1.5.1",
-    "systemjs": "0.19.16",
+    "systemjs": "0.19.22",
     "underscore": "^1.8.3"
   }
 }

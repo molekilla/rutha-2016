@@ -1,9 +1,10 @@
+// Compiled using typings@0.6.10
+// Source: https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/80c19345b84626c404ecc1bdc68c7ee6297b4f7f/angularjs/angular-route.d.ts
 // Type definitions for Angular JS 1.3 (ngRoute module)
 // Project: http://angularjs.org
 // Definitions by: Jonathan Park <https://github.com/park9140>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-/// <reference path="angular.d.ts" />
 
 declare module "angular-route" {
     var _: string;
@@ -47,6 +48,7 @@ declare module angular.route {
 
     }
 
+    type InlineAnnotatedFunction = Function|Array<string|Function>
 
     /**
      * see http://docs.angularjs.org/api/ngRoute/provider/$routeProvider#when for API documentation
@@ -56,7 +58,7 @@ declare module angular.route {
          * {(string|function()=}
          * Controller fn that should be associated with newly created scope or the name of a registered controller if passed as a string.
          */
-        controller?: string|Function;
+        controller?: string|InlineAnnotatedFunction;
         /**
          * A controller alias name. If present the controller will be published to scope under the controllerAs name.
          */
