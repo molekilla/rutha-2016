@@ -11,7 +11,7 @@
     "es6-module-loader": "^0.17.10",
     "plugin-ng-template": "^0.1.1",
     "restangular": "^1.5.1",
-    "systemjs": "0.19.16",
+    "systemjs": "0.19.22",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
