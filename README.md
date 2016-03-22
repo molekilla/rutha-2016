@@ -1,6 +1,7 @@
 # rutha-2016
-## a lean, npm based, hapi based
+## a lean, npm based, hapi or lite-server based
 ### angular 1 or 2 boilerplate with recipes
+### in Typescript
 
 
 ## Works
@@ -60,9 +61,10 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 
 ## Guidelines for rutha 2016
 
-We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward) 
+* [Upgrade guide](https://angular.io/docs/ts/latest/guide/upgrade.html)
+* [ng-forward](https://github.com/ngUpgraders/ng-forward) 
 
-## Angular Typescript Recipes
+## Angular 1 Recipes
 
 * [Using ES5 with rutha-2016](https://github.com/molekilla/rutha-2016/tree/angular-es5)
 * [ng-router](https://github.com/molekilla/rutha-2016/tree/angular-training-ngRoute)
@@ -77,7 +79,11 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular-training-unit-tests)
 * [Components and Directives](https://github.com/molekilla/rutha-2016/tree/angular-training-component-directives)
 
-## Angular2 Recipes
+## Upgrade Recipes
+
+* [Bootstrap](https://github.com/molekilla/rutha-2016/tree/angular2-training-upgrade-bootstrap)
+
+## Angular 2 Recipes
 * [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
 * [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
 * [Forms with template validations](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
