@@ -87,7 +87,7 @@ We'll try to stick to [ng-forward](https://github.com/ngUpgraders/ng-forward)
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
 * [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
 * Pipes
-* Managing state with Redux
+* [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-training-state-with-redux)
 
 ## Other seeds
 
