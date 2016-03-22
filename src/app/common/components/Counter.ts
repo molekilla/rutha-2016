@@ -23,5 +23,5 @@ export var Counter: ng.IComponentOptions = {
         <button type="button" ng-click="$ctrl.decrement();">-</button>
         <button type="button" ng-click="$ctrl.increment();">+</button>
       </div>   
-   `;
+   `
 };

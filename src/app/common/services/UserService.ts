@@ -9,7 +9,6 @@ export interface IUserService {
 
 export class UserService2 implements IUserService {
     static $inject = ['$q', 'Restangular'];
-    static name: string = typeof UserService2;
     constructor(private $q: angular.IQService, private restangular: restangular.IService) {
 
     }
@@ -82,7 +81,6 @@ export class UserService2 implements IUserService {
 
 export class UserService implements IUserService {
     static $inject = ['$q', '$http'];
-    static name: string = typeof UserService;
     constructor(private $q: angular.IQService, private $http: angular.IHttpService) {
 
     }

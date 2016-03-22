@@ -1,9 +1,10 @@
+// Compiled using typings@0.6.10
+// Source: https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/7de6c3dd94feaeb21f20054b9f30d5dabc5efabd/angular-ui-router/angular-ui-router.d.ts
 // Type definitions for Angular JS 1.1.5+ (ui.router module)
 // Project: https://github.com/angular-ui/ui-router
 // Definitions by: Michel Salib <https://github.com/michelsalib>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-/// <reference path="../angularjs/angular.d.ts" />
 
 // Support for AMD require and CommonJS
 declare module 'angular-ui-router' {
@@ -28,7 +29,7 @@ declare module 'angular-ui-router' {
     export type IType = angular.ui.IType;
 }
 
-declare module angular.ui {
+declare namespace angular.ui {
 
     interface IState {
         name?: string;
@@ -88,12 +89,12 @@ declare module angular.ui {
          * Arbitrary data object, useful for custom configuration.
          */
         data?: any;
-        
+
         /**
          * Boolean (default true). If false will not re-trigger the same state just because a search/query parameter has changed. Useful for when you'd like to modify $location.search() without triggering a reload.
          */
         reloadOnSearch?: boolean;
-        
+
         /**
          * Boolean (default true). If false will reload state on everytransitions. Useful for when you'd like to restore all data  to its initial state.
          */
@@ -257,6 +258,7 @@ declare module angular.ui {
         transitionTo(state: string, params?: {}, options?: IStateOptions): angular.IPromise<any>;
         transitionTo(state: IState, params?: {}, options?: IStateOptions): angular.IPromise<any>;
         includes(state: string, params?: {}): boolean;
+        includes(state: string, params?: {}, options?:any): boolean;
         is(state:string, params?: {}): boolean;
         is(state: IState, params?: {}): boolean;
         href(state: IState, params?: {}, options?: IHrefOptions): string;

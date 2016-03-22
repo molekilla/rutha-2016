@@ -15,10 +15,13 @@ System.config({
     "npm:*": "node_modules/*"
   },  
   map: {
+    'jasmine': 'npm:jasmine-core/lib/jasmine-core/jasmine',
     '_': 'npm:underscore/underscore.js',
     'restangular': 'npm:restangular/dist/restangular',
     'angular-route': 'npm:angular-route/angular-route',    
+    'angular-ui-router': 'npm:angular-ui-router/release/angular-ui-router',
     'angular': 'npm:angular/angular',
+    'angular-messages': 'npm:angular-messages/angular-messages',
     'ng-template': 'npm:plugin-ng-template/ng-template', // buggy
     'text': 'assets/text'
   }

@@ -1,4 +1,6 @@
-System.register(['angular'], function(exports_1) {
+System.register(['angular'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var User;
     return {
         setters:[
@@ -9,9 +11,8 @@ System.register(['angular'], function(exports_1) {
                     this.username = username;
                     this.password = password;
                 }
-                User.name = typeof User;
                 return User;
-            })();
+            }());
             exports_1("User", User);
         }
     }

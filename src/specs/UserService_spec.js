@@ -1,4 +1,6 @@
-System.register(['angular', 'restangular', 'underscore', 'angular-mocks', '../app/common/services/UserService'], function(exports_1) {
+System.register(['angular', 'restangular', 'underscore', 'angular-mocks', '../app/common/services/UserService'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var UserService_1;
     function main() {
         var userService, $httpBackend, handler;

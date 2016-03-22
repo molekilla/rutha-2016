@@ -1,5 +1,7 @@
 // http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter', './common/components/Counter'], function(exports_1) {
+System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter', './common/components/Counter'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var uiRouteConfig_1, UserListCtrl_1, Counter_1, Counter_2;
     var appModule;
     function RestangularConfig(RestangularProvider) {

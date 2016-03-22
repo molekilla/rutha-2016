@@ -1,4 +1,6 @@
-System.register(['angular'], function(exports_1) {
+System.register(['angular'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var Counter;
     return {
         setters:[
@@ -14,6 +16,7 @@ System.register(['angular'], function(exports_1) {
                     this.template = "\n      <div class=\"todo\">\n        <input type=\"text\" ng-model=\"vm.count\">\n        <button type=\"button\" ng-click=\"vm.decrement();\">-</button>\n        <button type=\"button\" ng-click=\"vm.increment();\">+</button>\n      </div>   \n   ";
                 }
                 Counter.prototype.controller = function () {
+                    debugger;
                     function increment() {
                         this.count++;
                     }
@@ -28,7 +31,7 @@ System.register(['angular'], function(exports_1) {
                     return directive;
                 };
                 return Counter;
-            })();
+            }());
             exports_1("Counter", Counter);
         }
     }

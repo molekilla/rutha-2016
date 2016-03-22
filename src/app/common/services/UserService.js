@@ -1,4 +1,6 @@
-System.register(['angular'], function(exports_1) {
+System.register(['angular'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var UserService2, UserService;
     return {
         setters:[
@@ -69,9 +71,8 @@ System.register(['angular'], function(exports_1) {
                     return deferred.promise;
                 };
                 UserService2.$inject = ['$q', 'Restangular'];
-                UserService2.name = typeof UserService2;
                 return UserService2;
-            })();
+            }());
             exports_1("UserService2", UserService2);
             UserService = (function () {
                 function UserService($q, $http) {
@@ -122,9 +123,8 @@ System.register(['angular'], function(exports_1) {
                     return deferred.promise;
                 };
                 UserService.$inject = ['$q', '$http'];
-                UserService.name = typeof UserService;
                 return UserService;
-            })();
+            }());
             exports_1("UserService", UserService);
             angular.module('app.services.UserService', [])
                 .service('UserService', UserService2);

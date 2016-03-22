@@ -1,10 +1,11 @@
+// Compiled using typings@0.6.10
+// Source: https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/7de6c3dd94feaeb21f20054b9f30d5dabc5efabd/restangular/restangular.d.ts
 // Type definitions for Restangular v1.4.0
 // Project: https://github.com/mgonto/restangular
 // Definitions by: Boris Yankov <https://github.com/borisyankov/>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 
-/// <reference path="../angularjs/angular.d.ts" />
 
 // Support AMD require (copying angular.d.ts approach)
 // allows for import {IRequestConfig} from 'restangular' ES6 approach
@@ -14,7 +15,7 @@ declare module 'restangular' {
 
 
 
-declare module restangular {
+declare namespace restangular {
 
   interface IPromise<T> extends angular.IPromise<T> {
     call(methodName: string, params?: any): IPromise<T>;

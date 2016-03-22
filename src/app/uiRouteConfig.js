@@ -1,4 +1,6 @@
-System.register(['./main/index', './main/login', './main/signup', './main/index.html!text', './main/login.html!text', './main/forgot.html!text', './main/signup.html!text'], function(exports_1) {
+System.register(['./main/index', './main/login', './main/signup', './main/index.html!text', './main/login.html!text', './main/forgot.html!text', './main/signup.html!text'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var index_1, login_1, signup_1, index_html_text_1, login_html_text_1, forgot_html_text_1, signup_html_text_1;
     function UIRouteConfig($stateProvider, $urlRouterProvider) {
         $stateProvider.

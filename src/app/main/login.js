@@ -1,4 +1,6 @@
-System.register(['angular', '../common/services/UserService', '../common/models/User'], function(exports_1) {
+System.register(['angular', '../common/services/UserService', '../common/models/User'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var UserService_1, User_1;
     var LoginController;
     return {
@@ -44,7 +46,7 @@ System.register(['angular', '../common/services/UserService', '../common/models/
                 };
                 LoginController.$inject = ['$scope', '$log', '$state', '$window', UserService_1.UserService.name];
                 return LoginController;
-            })();
+            }());
             exports_1("LoginController", LoginController);
         }
     }

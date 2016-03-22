@@ -10,6 +10,7 @@ export class Counter implements ng.IDirective {
     };
 
     controller() {
+        debugger
         function increment() {
             this.count++;
         }
