@@ -1,108 +1,122 @@
-# rutha-2016
-## a lean, npm based, hapi or lite-server based
-### angular 1 or 2 boilerplate with recipes
-### in Typescript
+# Handout
+## Angular 1 to 2 - Upgrade - Step 1
 
 
-## Works
+> Note: Before running the recipe, be sure to install all requirements found in master [README](https://github.com/molekilla/rutha-2016)
 
-* Ubuntu
-* Windows
-* OSX (likely :) )
+###  Add Angular 2 dependencies to src/package.json
 
-## Requires
+The dependencies from Angular 2 recipes, at the end, you should have both Angular 1 and 2.
 
-* (Optional) MongoDB 3.x
-* Typescript 1.8.7
-* Node 4.2.x or later
-* tsd or typings
+```javascript
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-bootstrap": "^0.12.2",
+    "angular-messages": "^1.5.0",
+    "angular-route": "1.5.0",
+    "angular-ui-router": "^0.2.15",
+    "angular2": "^2.0.0-beta.12",
+    "bootstrap": "^3.3.6",
+    "es6-module-loader": "^0.17.10",
+    "es6-shim": "^0.35.0",
+    "plugin-ng-template": "^0.1.1",
+    "reflect-metadata": "^0.1.2",
+    "restangular": "^1.5.1",
+    "systemjs": "0.19.22",
+    "underscore": "^1.8.3",
+    "zone.js": "^0.6.6"
+  }
+```
 
-### Preinstall requisites
+###  Update SystemJS config
 
-1. npm install nodemon -g
-2. npm install typescript@1.8.7 -g
-3. npm install tsd -g (or npm install typings -g)
-
-## Installing master - Angular 1
-
-1. npm install
-2. npm install src/package.json
-3. tsd install (or typings install)
-
-## Installing Angular 2
-
-1. npm install
-2. npm install src/package.json
-3. (Optional, for Jasmine types) tsd install (or typings install)
-
-### why typings ?
-
-More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.html)
-
-
-### npm tasks ###
-
-* `npm run start:lite`: Serves frontend using lite-server with auto reload
-* `npm run start:hapi`: Serves frontend using hapi with auto reload
-* `npm run build:js`: Builds javascript bundle
-* `npm run build:sass`: Builds SASS / CSS bundle
-* `npm test`
-
-### source mappings
-
-* hapi: public/ -> src/
-* lite: src/ -> src/
-* build: src/ -> src/
-
-## Ignore these errors (and how to avoid them)
-
-1. `Error: listen EADDRINUSE :::9091`, this is live reload complaining. Don't want autoreload? Remove the restart event in nodemon.json
-2. `src/app/app.ts(15,23): error TS2307: Cannot find module './main/signup.html!text'.`, typescript can't parse SystemJS plugins. You might want to try [plugin-typescript](https://github.com/frankwallis/plugin-typescript)
-
-## Guidelines for rutha 2016
-
-* [Upgrade guide](https://angular.io/docs/ts/latest/guide/upgrade.html)
-* [ng-forward](https://github.com/ngUpgraders/ng-forward) 
-
-## Angular 1 Recipes
-
-* [Using ES5 with rutha-2016](https://github.com/molekilla/rutha-2016/tree/angular-es5)
-* [ng-router](https://github.com/molekilla/rutha-2016/tree/angular-training-ngRoute)
-* [Using Angular module with SystemJS - WIP](https://github.com/molekilla/rutha-2016/tree/angular-training-modules-di)
-* [ui-router](https://github.com/molekilla/rutha-2016/tree/angular-training-ui-router)
-* [Services](https://github.com/molekilla/rutha-2016/tree/angular-training-services)
-* [Promises](https://github.com/molekilla/rutha-2016/tree/angular-training-promises)
-* [$http](https://github.com/molekilla/rutha-2016/tree/angular-training-http)
-* [Restangular](https://github.com/molekilla/rutha-2016/tree/angular-training-http-restangular)
-* [Databinding](https://github.com/molekilla/rutha-2016/tree/angular-training-databinding)
-* [Forms](https://github.com/molekilla/rutha-2016/tree/angular-training-form-validations)
-* [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular-training-unit-tests)
-* [Components and Directives](https://github.com/molekilla/rutha-2016/tree/angular-training-component-directives)
-
-## Upgrade Recipes
-
-* [Bootstrap](https://github.com/molekilla/rutha-2016/tree/angular2-training-upgrade-bootstrap)
-
-## Angular 2 Recipes
-* [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
-* [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
-* [Forms with template validations](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
-* [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
-* [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
-* [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
-* [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
-* [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
-* Pipes
-* [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-training-state-with-redux)
-
-## Other seeds
-
-* https://github.com/mgechev/angular2-seed
+```javascript
+System.config({
+  baseURL: 'public/',
+  defaultJSExtensions: true,
+  meta: {
+    './**/*.html': {
+      loader: 'text'
+    }
+  },
+  paths: {
+    "./*": "app/*",
+    "assets/*": "assets/*",
+    "github:*": "github.com/*",
+    "npm:*": "node_modules/*",
+    "angular2/*": "node_modules/angular2/*",
+    "rxjs/*": "node_modules/rxjs/*"    
+  },  
+  map: {
+    'jasmine': 'npm:jasmine-core/lib/jasmine-core/jasmine',
+    '_': 'npm:underscore/underscore.js',
+    'restangular': 'npm:restangular/dist/restangular',
+    'angular-route': 'npm:angular-route/angular-route',    
+    'angular-ui-router': 'npm:angular-ui-router/release/angular-ui-router',
+    'angular': 'npm:angular/angular',
+    'angular-messages': 'npm:angular-messages/angular-messages',
+    'ng-template': 'npm:plugin-ng-template/ng-template',
+    'text': 'assets/text'
+  }
+});
+```
 
 
-### Maintainers, notes ###
-Rogelio Morrell C. 
+### Bootstrap with upgrader
 
 
-### Disclaimer ###
-Feel free to fork.
+Be sure to add the Angular 2 browser typing. Then add the upgrader instance after importing Angular 1.
+ Last, replace `angular.bootstrap` with `upgradeAdapter.bootstrap`.
+
+> Note: We'll reuse the same upgrade adapter across the application.
+```typescript
+import {UpgradeAdapter} from 'angular2/upgrade';
+export const upgradeAdapter = new UpgradeAdapter();
+```
+
+
+```javascript
+// 1) Add Angular 2 typing
+
+///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
+import 'angular';
+import '_';
+import 'restangular';
+import 'angular-route';
+import 'angular-ui-router';
+import 'angular-messages';
+import {UserService2} from './common/services/UserService';
+import {UIRouteConfig} from './uiRouteConfig';
+import {UserListCtrl} from './profile/UserListCtrl';
+
+// from https://toddmotto.com/exploring-the-angular-1-5-component-method/
+import {Counter as CounterDirective} from './common/directives/Counter';
+import {Counter as CounterComponent} from './common/components/Counter';
+
+// 2) Load UpgradeAdapter after Angular 1
+import {upgradeAdapter} from './upgradeAdapter';
+
+RestangularConfig.$inject = ['RestangularProvider'];
+function RestangularConfig(RestangularProvider: any) {
+    RestangularProvider.setFullResponse(true);
+    RestangularProvider.setBaseUrl('/');
+}
+
+let appModule = angular.module('app', ['ngRoute','ngMessages', 
+    'ui.router', 'restangular']);
+
+appModule
+    .service('UserService', UserService2)
+    .directive('counter', CounterDirective.factory())
+    .component('counterComp', CounterComponent)
+    .controller('UserListCtrl', UserListCtrl)
+    .config(RestangularConfig)
+    .config(UIRouteConfig)
+    .config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.withCredentials = true;
+    }]);
+
+// 3) Use upgrade bootstrapper
+upgradeAdapter.bootstrap(document.body, ['app'], {strictDi: true});
+
+```

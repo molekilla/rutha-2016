@@ -4,7 +4,7 @@ import {User} from '../common/models/User';
 
 export class SignupController {
 
-    static $inject = ['$scope', '$log', '$state', UserService.name];
+    static $inject = ['$scope', '$log', '$state', 'UserService'];
 
     constructor(private $scope: angular.IScope,
         private $log: angular.ILogService,

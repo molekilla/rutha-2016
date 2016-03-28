@@ -7,7 +7,7 @@ export class UserListCtrl {
     canReset: boolean;
     title: string;
 
-    static $inject = ['$scope', '$log', '$state', '$window', UserService.name];
+    static $inject = ['$scope', '$log', '$state', '$window', 'UserService'];
     constructor(private $scope: angular.IScope,
         private $log: angular.ILogService,
         private $state: angular.ui.IStateService,

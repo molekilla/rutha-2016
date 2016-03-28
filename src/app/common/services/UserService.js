@@ -126,8 +126,6 @@ System.register(['angular'], function(exports_1, context_1) {
                 return UserService;
             }());
             exports_1("UserService", UserService);
-            angular.module('app.services.UserService', [])
-                .service('UserService', UserService2);
         }
     }
 });

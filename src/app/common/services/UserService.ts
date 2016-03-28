@@ -133,7 +133,3 @@ export class UserService implements IUserService {
         return deferred.promise;
     }
 }
-
-
-angular.module('app.services.UserService', [])
-    .service('UserService', UserService2);

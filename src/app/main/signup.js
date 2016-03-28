@@ -1,14 +1,10 @@
-System.register(['angular', '../common/services/UserService'], function(exports_1, context_1) {
+System.register(['angular'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var UserService_1;
     var SignupController;
     return {
         setters:[
-            function (_1) {},
-            function (UserService_1_1) {
-                UserService_1 = UserService_1_1;
-            }],
+            function (_1) {}],
         execute: function() {
             SignupController = (function () {
                 function SignupController($scope, $log, $state, userService, errorLabel, register) {
@@ -48,7 +44,7 @@ System.register(['angular', '../common/services/UserService'], function(exports_
                         });
                     }
                 };
-                SignupController.$inject = ['$scope', '$log', '$state', UserService_1.UserService.name];
+                SignupController.$inject = ['$scope', '$log', '$state', 'UserService'];
                 return SignupController;
             }());
             exports_1("SignupController", SignupController);

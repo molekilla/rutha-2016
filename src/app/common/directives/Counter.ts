@@ -1,7 +1,9 @@
 import 'angular';
 
 export class Counter implements ng.IDirective {
-
+    increment: any;
+    decrement: any;
+    
     bindToController = {
         count: '='
     };
@@ -10,7 +12,6 @@ export class Counter implements ng.IDirective {
     };
 
     controller() {
-        debugger
         function increment() {
             this.count++;
         }

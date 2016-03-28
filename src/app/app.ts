@@ -1,4 +1,6 @@
-// http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
+///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
+
+
 
 import 'angular';
 import '_';
@@ -6,7 +8,7 @@ import 'restangular';
 import 'angular-route';
 import 'angular-ui-router';
 import 'angular-messages';
-
+import {UserService2} from './common/services/UserService';
 import {UIRouteConfig} from './uiRouteConfig';
 import {UserListCtrl} from './profile/UserListCtrl';
 
@@ -14,17 +16,19 @@ import {UserListCtrl} from './profile/UserListCtrl';
 import {Counter as CounterDirective} from './common/directives/Counter';
 import {Counter as CounterComponent} from './common/components/Counter';
 
+import {upgradeAdapter} from './upgradeAdapter';
+
 RestangularConfig.$inject = ['RestangularProvider'];
 function RestangularConfig(RestangularProvider: any) {
     RestangularProvider.setFullResponse(true);
     RestangularProvider.setBaseUrl('/');
 }
 
-
 let appModule = angular.module('app', ['ngRoute','ngMessages', 
-    'ui.router', 'restangular', 'app.services.UserService']);
+    'ui.router', 'restangular']);
 
 appModule
+    .service('UserService', UserService2)
     .directive('counter', CounterDirective.factory())
     .component('counterComp', CounterComponent)
     .controller('UserListCtrl', UserListCtrl)
@@ -34,6 +38,5 @@ appModule
         $httpProvider.defaults.withCredentials = true;
     }]);
 
-angular.bootstrap(document, ['app'], {
-    strictDi: true
-});
+
+upgradeAdapter.bootstrap(document.body, ['app'], {strictDi: true});

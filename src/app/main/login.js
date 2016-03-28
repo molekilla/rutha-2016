@@ -1,14 +1,11 @@
-System.register(['angular', '../common/services/UserService', '../common/models/User'], function(exports_1, context_1) {
+System.register(['angular', '../common/models/User'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var UserService_1, User_1;
+    var User_1;
     var LoginController;
     return {
         setters:[
             function (_1) {},
-            function (UserService_1_1) {
-                UserService_1 = UserService_1_1;
-            },
             function (User_1_1) {
                 User_1 = User_1_1;
             }],
@@ -44,7 +41,7 @@ System.register(['angular', '../common/services/UserService', '../common/models/
                 LoginController.prototype.linkReset = function () {
                     this.$state.go('login.forgot');
                 };
-                LoginController.$inject = ['$scope', '$log', '$state', '$window', UserService_1.UserService.name];
+                LoginController.$inject = ['$scope', '$log', '$state', '$window', 'UserService'];
                 return LoginController;
             }());
             exports_1("LoginController", LoginController);

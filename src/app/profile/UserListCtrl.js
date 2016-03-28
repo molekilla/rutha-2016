@@ -1,14 +1,10 @@
-System.register(['angular', '../common/services/UserService'], function(exports_1, context_1) {
+System.register(['angular'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var UserService_1;
     var UserListCtrl;
     return {
         setters:[
-            function (_1) {},
-            function (UserService_1_1) {
-                UserService_1 = UserService_1_1;
-            }],
+            function (_1) {}],
         execute: function() {
             UserListCtrl = (function () {
                 function UserListCtrl($scope, $log, $state, $window, userService, errorLabel, users) {
@@ -33,7 +29,7 @@ System.register(['angular', '../common/services/UserService'], function(exports_
                         _this.errorLabel = response.data.err || "An error ocurred";
                     });
                 };
-                UserListCtrl.$inject = ['$scope', '$log', '$state', '$window', UserService_1.UserService.name];
+                UserListCtrl.$inject = ['$scope', '$log', '$state', '$window', 'UserService'];
                 return UserListCtrl;
             }());
             exports_1("UserListCtrl", UserListCtrl);

@@ -16,7 +16,6 @@ System.register(['angular'], function(exports_1, context_1) {
                     this.template = "\n      <div class=\"todo\">\n        <input type=\"text\" ng-model=\"vm.count\">\n        <button type=\"button\" ng-click=\"vm.decrement();\">-</button>\n        <button type=\"button\" ng-click=\"vm.increment();\">+</button>\n      </div>   \n   ";
                 }
                 Counter.prototype.controller = function () {
-                    debugger;
                     function increment() {
                         this.count++;
                     }

@@ -1,8 +1,8 @@
-// http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
-System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter', './common/components/Counter'], function(exports_1, context_1) {
+///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
+System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './common/services/UserService', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter', './common/components/Counter', './upgradeAdapter'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var uiRouteConfig_1, UserListCtrl_1, Counter_1, Counter_2;
+    var UserService_1, uiRouteConfig_1, UserListCtrl_1, Counter_1, Counter_2, upgradeAdapter_1;
     var appModule;
     function RestangularConfig(RestangularProvider) {
         RestangularProvider.setFullResponse(true);
@@ -16,6 +16,9 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             function (_4) {},
             function (_5) {},
             function (_6) {},
+            function (UserService_1_1) {
+                UserService_1 = UserService_1_1;
+            },
             function (uiRouteConfig_1_1) {
                 uiRouteConfig_1 = uiRouteConfig_1_1;
             },
@@ -27,12 +30,16 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
             },
             function (Counter_2_1) {
                 Counter_2 = Counter_2_1;
+            },
+            function (upgradeAdapter_1_1) {
+                upgradeAdapter_1 = upgradeAdapter_1_1;
             }],
         execute: function() {
             RestangularConfig.$inject = ['RestangularProvider'];
             appModule = angular.module('app', ['ngRoute', 'ngMessages',
-                'ui.router', 'restangular', 'app.services.UserService']);
+                'ui.router', 'restangular']);
             appModule
+                .service('UserService', UserService_1.UserService2)
                 .directive('counter', Counter_1.Counter.factory())
                 .component('counterComp', Counter_2.Counter)
                 .controller('UserListCtrl', UserListCtrl_1.UserListCtrl)
@@ -41,9 +48,7 @@ System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-rou
                 .config(['$httpProvider', function ($httpProvider) {
                     $httpProvider.defaults.withCredentials = true;
                 }]);
-            angular.bootstrap(document, ['app'], {
-                strictDi: true
-            });
+            upgradeAdapter_1.upgradeAdapter.bootstrap(document.body, ['app'], { strictDi: true });
         }
     }
 });
