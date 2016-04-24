@@ -26,14 +26,12 @@
 ## Installing master - Angular 1
 
 1. npm install
-2. npm install src/package.json
-3. tsd install (or typings install)
+2. tsd install (or typings install)
 
 ## Installing Angular 2
 
 1. npm install
-2. npm install src/package.json
-3. (Optional, for Jasmine types) tsd install (or typings install)
+2. (Optional, for Jasmine types) tsd install (or typings install)
 
 ### why typings ?
 
@@ -94,6 +92,8 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 * [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
 * Pipes
 * [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-training-state-with-redux)
+* [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree)
+
 
 ## Other seeds
 
