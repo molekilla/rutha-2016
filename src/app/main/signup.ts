@@ -1,7 +1,9 @@
 import {Router} from 'angular2/router';
 import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES} from 'angular2/common';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
+import {ConfirmPasswordComponent} from '../common/components/confirm-password';
 
 @Component({
     styles: [
@@ -12,31 +14,24 @@ import {User} from '../common/models/User';
   border-left: 5px solid #a94442; /* red */
 }`
     ],
-    templateUrl: 'public/app/main/signup.html'
+    templateUrl: 'public/app/main/signup.html',
+    directives: [ConfirmPasswordComponent, FORM_DIRECTIVES]
 })
 export class SignupComponent {
     errorLabel: string;
-    isValidPassword = true;
     user = new User();
-
+    labels: any = {
+        password: 'Password',
+        confirmation: 'Confirm'
+    }
     constructor(private userService: UserService,
      private router: Router) {
         console.log('Signup controller');
     }
-
-    minLen(val: string, min: number) {
-        if (val && val.length < min) {
-            return false;
-        } else {
-            return true;
-        }
+    
+    onPasswordChange(password: string) {
+        this.user.password = password;
     }
-    passwordMatch(password: string, passwordConfirmation: string) {
-        this.isValidPassword = true;
-        if (password !== passwordConfirmation) {
-            this.isValidPassword = false;
-        }
-    };
 
     signup() {
         this.userService

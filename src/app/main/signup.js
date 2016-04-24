@@ -1,4 +1,4 @@
-System.register(['angular2/router', 'angular2/core', '../common/services/UserService', '../common/models/User'], function(exports_1) {
+System.register(['angular2/router', 'angular2/core', 'angular2/common', '../common/services/UserService', '../common/models/User', '../common/components/confirm-password'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/router', 'angular2/core', '../common/services/UserSer
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var router_1, core_1, UserService_1, User_1;
+    var router_1, core_1, common_1, UserService_1, User_1, confirm_password_1;
     var SignupComponent;
     return {
         setters:[
@@ -18,36 +18,33 @@ System.register(['angular2/router', 'angular2/core', '../common/services/UserSer
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (common_1_1) {
+                common_1 = common_1_1;
+            },
             function (UserService_1_1) {
                 UserService_1 = UserService_1_1;
             },
             function (User_1_1) {
                 User_1 = User_1_1;
+            },
+            function (confirm_password_1_1) {
+                confirm_password_1 = confirm_password_1_1;
             }],
         execute: function() {
             SignupComponent = (function () {
                 function SignupComponent(userService, router) {
                     this.userService = userService;
                     this.router = router;
-                    this.isValidPassword = true;
                     this.user = new User_1.User();
+                    this.labels = {
+                        password: 'Password',
+                        confirmation: 'Confirm'
+                    };
                     console.log('Signup controller');
                 }
-                SignupComponent.prototype.minLen = function (val, min) {
-                    if (val && val.length < min) {
-                        return false;
-                    }
-                    else {
-                        return true;
-                    }
+                SignupComponent.prototype.onPasswordChange = function (password) {
+                    this.user.password = password;
                 };
-                SignupComponent.prototype.passwordMatch = function (password, passwordConfirmation) {
-                    this.isValidPassword = true;
-                    if (password !== passwordConfirmation) {
-                        this.isValidPassword = false;
-                    }
-                };
-                ;
                 SignupComponent.prototype.signup = function () {
                     var _this = this;
                     this.userService
@@ -65,7 +62,8 @@ System.register(['angular2/router', 'angular2/core', '../common/services/UserSer
                             ".ng-valid[required] {\n  border-left: 5px solid #42A948; /* green */\n}",
                             ".ng-invalid {\n  border-left: 5px solid #a94442; /* red */\n}"
                         ],
-                        templateUrl: 'public/app/main/signup.html'
+                        templateUrl: 'public/app/main/signup.html',
+                        directives: [confirm_password_1.ConfirmPasswordComponent, common_1.FORM_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [UserService_1.UserService, router_1.Router])
                 ], SignupComponent);

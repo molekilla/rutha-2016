@@ -13,7 +13,8 @@
         "start:hapi": "concurrently \"npm run sass:w\" \"npm run tsc:w\" \"nodemon lib/hapi/index.js -e js,html\"  ",
         "start:lite": "concurrently \"npm run sass:w\" \"npm run tsc:w\" \"npm run lite\"  ",
         "lite": "lite-server",
-        "test": "karma start src/karma.conf.js"
+        "test": "karma start src/karma.conf.js",
+        "postinstall":"cd src && rm -rf node_modules/ && npm install"
     },
     "author": "Rogelio Morrell",
     "repository": {
