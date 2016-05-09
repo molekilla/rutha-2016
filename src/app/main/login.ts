@@ -1,8 +1,8 @@
-import {Component, OnInit} from 'angular2/core';
-import {Router, RouteParams} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, RouteParams} from '@angular/router-deprecated';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
-import {FormBuilder, Validators, Control, ControlGroup} from 'angular2/common';
+import {FormBuilder, Validators, Control, ControlGroup} from '@angular/common';
 
 @Component({
     styles: [

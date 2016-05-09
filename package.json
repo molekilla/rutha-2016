@@ -1,6 +1,6 @@
 {
     "name": "rutha-2016",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "rutha ui",
     "main": "lib/hapi/index.js",
     "scripts": {
@@ -13,15 +13,16 @@
         "start:hapi": "concurrently \"npm run sass:w\" \"npm run tsc:w\" \"nodemon lib/hapi/index.js -e js,html\"  ",
         "start:lite": "concurrently \"npm run sass:w\" \"npm run tsc:w\" \"npm run lite\"  ",
         "lite": "lite-server",
-        "test": "karma start src/karma.conf.js"
+        "test": "karma start src/karma.conf.js",
+        "postinstall": "typings install && cd src && npm i"
     },
-    "author": "Rogelio Morrell",
+    "author": "Rogelio Morrell, 2016",
     "repository": {
         "type": "git",
         "url": "git://github.com/molekilla/rutha-2016.git"
     },
     "engines": {
-        "node": ">=4.2.1"
+        "node": ">=4.4.3"
     },
     "license": "MIT",
     "devDependencies": {
@@ -31,13 +32,13 @@
         "karma": "^0.13.19",
         "karma-chrome-launcher": "^0.2.2",
         "karma-jasmine": "^0.3.7",
-        "lite-server": "^2.1.0",
+        "lite-server": "^2.2.0",
         "live-reload": "^1.1.0",
         "node-sass": "^3.4.2",
         "nodemon": "^1.9.1",
         "systemjs": "^0.19.22",
         "systemjs-builder": "^0.15.3",
-        "typescript": "1.7.5",
+        "typescript": "^1.8.10",
         "phantomjs-prebuilt": "^2.1.3"
     },
     "dependencies": {
