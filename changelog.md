@@ -3,6 +3,10 @@
 
 ### Changelog ###
 
+#### 1.1.1 - angular 2 - webpack branch
+
+* Bump to angular 2 RC 1, using webpack
+
 #### 1.1.0 - angular 2 branch
 
 * Bump to angular 2 RC 1

@@ -12,15 +12,7 @@
     <meta name="description" content="Plain HTML template">
     <meta name="author" content="Rutha">
     <link rel="stylesheet" href="../app/css/main.css">
-    <script src="../node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="../node_modules/zone.js/dist/zone.js"></script>
-    <script src="../node_modules/reflect-metadata/Reflect.js"></script>
-    
-    <script src="../node_modules/systemjs/dist/system.src.js"></script>
-    <script src="../app/system.config.lite.js"></script>
-    <script>
-        System.import('app').catch(function(err){ console.error(err);  });;
-    </script>
+
 </head>
 
 <body>
@@ -47,7 +39,8 @@
     </div>
 
     <app-boot  class="container">Index</app-boot>
-
+<script src="vendor.bundle.js"></script>
+<script src="bundle.js"></script>
 </body>
 
 </html>
