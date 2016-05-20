@@ -1,12 +1,12 @@
 // From https://developers.livechatinc.com/blog/testing-angular-2-apps-routeroutlet-and-http/
-import {it, describe, expect, beforeEachProviders, beforeEach, inject} from 'angular2/testing';
-import {Injector, provide} from 'angular2/core';
+import {it, describe, expect, beforeEachProviders, beforeEach, inject} from '@angular/core/testing';
+import {Injector, provide} from '@angular/core';
 import {UserService} from '../app/common/services/UserService';
 import {IUserService} from '../app/common/services/UserServiceProvider';
 import {Observable}     from 'rxjs/Observable';
 import 'rxjs/Rx';
-import {BaseRequestOptions, Response, ResponseOptions, Http} from 'angular2/http';
-import {MockBackend, MockConnection} from 'angular2/http/testing';
+import {BaseRequestOptions, Response, ResponseOptions, Http} from '@angular/http';
+import {MockBackend, MockConnection} from '@angular/http/testing';
 
 export function main() {
 

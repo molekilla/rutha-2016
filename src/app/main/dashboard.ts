@@ -1,5 +1,5 @@
-import {Router, RouteParams} from 'angular2/router';
-import {Component, OnInit, OnDestroy, Inject} from 'angular2/core';
+import {Router, RouteParams} from '@angular/router-deprecated';
+import {Component, OnInit, OnDestroy, Inject} from '@angular/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
 import {UserActions} from '../common/actions/users';

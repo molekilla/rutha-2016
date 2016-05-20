@@ -3,6 +3,10 @@
 
 ### Changelog ###
 
+#### 1.1.0 - angular 2 branch
+
+* Bump to angular 2 RC 1
+
 #### 1.0.0
 
 * Bump dependencies
