@@ -1,4 +1,4 @@
-import {Router} from '@angular/router-deprecated';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {Component} from '@angular/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
@@ -12,7 +12,8 @@ import {User} from '../common/models/User';
   border-left: 5px solid #a94442; /* red */
 }`
     ],
-    templateUrl: 'public/app/main/signup.html'
+    directives: [ROUTER_DIRECTIVES],
+    templateUrl: 'app/main/signup.html'
 })
 export class SignupComponent {
     errorLabel: string;
@@ -20,7 +21,7 @@ export class SignupComponent {
     user = new User();
 
     constructor(private userService: UserService,
-     private router: Router) {
+        private router: Router) {
         console.log('Signup controller');
     }
 
@@ -42,9 +43,9 @@ export class SignupComponent {
         this.userService
             .signup(this.user)
             .subscribe(
-            resp  => {
+            resp => {
                 this.errorLabel = null;
-                this.router.navigate(['Login', { action: 'main' }]);
+                this.router.navigate(['/login', 'main']);
             },
             error =>
                 this.errorLabel = error.message || "An error ocurred");

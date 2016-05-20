@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var UserService_1 = require('../common/services/UserService');
 var User_1 = require('../common/models/User');
@@ -41,7 +41,7 @@ var SignupComponent = (function () {
             .signup(this.user)
             .subscribe(function (resp) {
             _this.errorLabel = null;
-            _this.router.navigate(['Login', { action: 'main' }]);
+            _this.router.navigate(['/login', 'main']);
         }, function (error) {
             return _this.errorLabel = error.message || "An error ocurred";
         });
@@ -52,9 +52,10 @@ var SignupComponent = (function () {
                 ".ng-valid[required] {\n  border-left: 5px solid #42A948; /* green */\n}",
                 ".ng-invalid {\n  border-left: 5px solid #a94442; /* red */\n}"
             ],
-            templateUrl: 'public/app/main/signup.html'
+            directives: [router_1.ROUTER_DIRECTIVES],
+            templateUrl: 'app/main/signup.html'
         }), 
-        __metadata('design:paramtypes', [UserService_1.UserService, router_deprecated_1.Router])
+        __metadata('design:paramtypes', [UserService_1.UserService, router_1.Router])
     ], SignupComponent);
     return SignupComponent;
 }());

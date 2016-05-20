@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var index_1 = require('./main/index');
 var signup_1 = require('./main/signup');
 var login_1 = require('./main/login');
@@ -26,21 +26,21 @@ var LayoutComponent = (function () {
     LayoutComponent = __decorate([
         core_1.Component({
             selector: 'app-boot',
-            template: "<div class=\"container\">\n         <router-outlet></router-outlet>\n    </div>\n\n    <div class=\"footer\">\n        <div class=\"container\">\n            <p class=\"text-muted\">Rutha / MIT Licensed / Made in Panama.</p>\n        </div>\n    </div>",
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
+            template: "\n    <!-- Fixed navbar -->\n    <div class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n      <div class=\"container\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" href=\"#\">Rutha Stack</a>\n        </div>\n        <div class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav\">\n            <li class=\"active\">\n                  <a [routerLink]=\"['/main']\">Home</a>\n            </li>\n            <li><a [routerLink]=\"['/signup']\">Signup</a></li>\n            <li><a [routerLink]=\"['/login/main']\">Login</a></li>\n          </ul>\n        </div><!--/.nav-collapse -->\n      </div>\n    </div>    \n    <div class=\"container\">\n         <router-outlet></router-outlet>\n    </div>\n\n    <div class=\"footer\">\n        <div class=\"container\">\n            <p class=\"text-muted\">Rutha / MIT Licensed / Made in Panama.</p>\n        </div>\n    </div>",
+            directives: [router_1.ROUTER_DIRECTIVES],
             providers: [
                 http_1.HTTP_PROVIDERS,
                 UserServiceProvider_1.USER_SERVICE_PROVIDER
             ]
         }),
-        router_deprecated_1.RouteConfig([
-            { path: '/', name: '_Index', component: index_1.IndexComponent },
-            { path: '/main', name: 'Index', component: index_1.IndexComponent },
-            { path: '/login/:action', name: 'Login', component: login_1.LoginComponent },
-            { path: '/signup', name: 'Signup', component: signup_1.SignupComponent },
-            { path: '/dashboard', name: 'Dashboard', component: dashboard_1.DashboardComponent }
+        router_1.Routes([
+            { path: '/', component: index_1.IndexComponent },
+            { path: '/main', component: index_1.IndexComponent },
+            { path: '/login/:action', component: login_1.LoginComponent },
+            { path: '/signup', component: signup_1.SignupComponent },
+            { path: '/dashboard', component: dashboard_1.DashboardComponent }
         ]), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router])
+        __metadata('design:paramtypes', [router_1.Router])
     ], LayoutComponent);
     return LayoutComponent;
 }());

@@ -1,4 +1,4 @@
-import {Router, RouteParams} from '@angular/router-deprecated';
+import {Router} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';

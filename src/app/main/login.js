@@ -9,14 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var UserService_1 = require('../common/services/UserService');
 var User_1 = require('../common/models/User');
 var common_1 = require('@angular/common');
 var LoginComponent = (function () {
-    function LoginComponent(userService, _routeParams, formBuilder) {
+    function LoginComponent(userService, formBuilder) {
         this.userService = userService;
-        this._routeParams = _routeParams;
         this.formBuilder = formBuilder;
         this.user = new User_1.User();
         console.log('Login controller');
@@ -29,8 +28,8 @@ var LoginComponent = (function () {
             password: this.password
         });
     }
-    LoginComponent.prototype.ngOnInit = function () {
-        if (this._routeParams.get('action') === 'forgot') {
+    LoginComponent.prototype.routerOnActivate = function (curr) {
+        if (curr.getParam('action') === 'forgot') {
             this.canReset = false;
             this.title = 'Reset';
         }
@@ -61,9 +60,10 @@ var LoginComponent = (function () {
                 ".ng-valid[required] {\n            border-left: 5px solid #42A948; /* green */\n        }",
                 ".ng-invalid {\n            border-left: 5px solid #a94442; /* red */\n        }"
             ],
-            templateUrl: 'public/app/main/login.html'
+            directives: [router_1.ROUTER_DIRECTIVES],
+            templateUrl: 'app/main/login.html'
         }), 
-        __metadata('design:paramtypes', [UserService_1.UserService, router_deprecated_1.RouteParams, common_1.FormBuilder])
+        __metadata('design:paramtypes', [UserService_1.UserService, common_1.FormBuilder])
     ], LoginComponent);
     return LoginComponent;
 }());

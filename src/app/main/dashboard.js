@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var router_deprecated_1 = require('@angular/router-deprecated');
+var router_1 = require('@angular/router');
 var core_1 = require('@angular/core');
 var UserService_1 = require('../common/services/UserService');
 var DashboardComponent = (function () {
@@ -33,7 +33,7 @@ var DashboardComponent = (function () {
         core_1.Component({
             template: "<div class=\"toolbar-spacer\">\n    <div class=\"alert alert-danger\" *ngIf=\"errorLabel\" role=\"alert\">{{ errorLabel }}</div>\n    <table class=\"table\">\n    <thead><tr><th>Username</th></tr></thead>\n    <tbody>\n      <tr *ngFor=\"#item of users\">\n      <td>{{ item.username }}</td>\n      </tr>\n      </tbody>\n    </table>\n    </div>"
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, UserService_1.UserService])
+        __metadata('design:paramtypes', [router_1.Router, UserService_1.UserService])
     ], DashboardComponent);
     return DashboardComponent;
 }());

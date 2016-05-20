@@ -29,7 +29,7 @@
 
         <hr *ngIf="canReset">
 
-        <p *ngIf="canReset">Forgot password? <a href="#login/forgot">Reset login</a></p>
+        <p *ngIf="canReset">Forgot password? <a [routerLink]="['/login/forgot']">Reset login</a></p>
 
     </div>
 </div>
