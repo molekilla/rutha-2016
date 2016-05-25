@@ -34,9 +34,15 @@ var UserService = (function () {
             .catch(this.handleError)
             .map(function (res) {
             if (res.status === 200) {
-                return { err: null, data: res.json().map(function (i) {
-                        return new User_1.User(i.email);
-                    }) };
+                return {
+                    err: null,
+                    data: res.json().map(function (i) {
+                        var user = new User_1.User(i.email);
+                        user.id = i._id;
+                        user.created = i.created;
+                        return user;
+                    })
+                };
             }
             else {
                 return { err: res.json() };

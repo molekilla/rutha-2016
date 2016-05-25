@@ -2,21 +2,29 @@ import {Router, RouteParams} from '@angular/router-deprecated';
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
+import {MomentPipe} from '../common/pipes/MomentPipe';
 
 @Component({
-
     template:
     `<div class="toolbar-spacer">
     <div class="alert alert-danger" *ngIf="errorLabel" role="alert">{{ errorLabel }}</div>
     <table class="table">
-    <thead><tr><th>Username</th></tr></thead>
+    <thead>
+    <tr><th>Id</th>
+    <th>Username</th>
+    <th>Created</th></tr>
+    </thead>
     <tbody>
       <tr *ngFor="#item of users">
+      <td>{{ item.id }}</td>
       <td>{{ item.username }}</td>
+      <td>{{ item.created | momentDate: 'dddd, MMMM Do YYYY' }}</td>
       </tr>
       </tbody>
     </table>
-    </div>`
+    </div>`,
+  pipes: [MomentPipe]
+    
 })
 export class DashboardComponent implements OnInit {
     message: string = "hello world";

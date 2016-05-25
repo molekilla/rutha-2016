@@ -12,6 +12,7 @@
   var map = {
     'build': 'app.js',
     '_': 'npm:underscore/underscore.js',
+    'moment': 'npm:moment/moment.js',
     'text': 'assets/text',
     'rxjs': 'node_modules/rxjs',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
