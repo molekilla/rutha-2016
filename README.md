@@ -90,7 +90,7 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 * [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
 * [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
-* Pipes
+* [Pipes](https://github.com/molekilla/rutha-2016/tree/angular2-training-pipes)
 * [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-training-state-with-redux)
 * [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree)
 
