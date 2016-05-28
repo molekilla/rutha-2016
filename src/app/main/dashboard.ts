@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
 import {MomentPipe} from '../common/pipes/MomentPipe';
+import {OrderByPipe} from '../common/pipes/OrderByPipe';
 
 @Component({
     template:
@@ -15,7 +16,7 @@ import {MomentPipe} from '../common/pipes/MomentPipe';
     <th>Created</th></tr>
     </thead>
     <tbody>
-      <tr *ngFor="#item of users">
+      <tr *ngFor="let item of users | orderBy: 'created' : 'date' ">
       <td>{{ item.id }}</td>
       <td>{{ item.username }}</td>
       <td>{{ item.created | momentDate: 'dddd, MMMM Do YYYY' }}</td>
@@ -23,7 +24,7 @@ import {MomentPipe} from '../common/pipes/MomentPipe';
       </tbody>
     </table>
     </div>`,
-  pipes: [MomentPipe]
+  pipes: [MomentPipe, OrderByPipe]
     
 })
 export class DashboardComponent implements OnInit {

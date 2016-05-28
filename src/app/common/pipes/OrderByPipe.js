@@ -10,18 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var moment = require('moment');
-var MomentPipe = (function () {
-    function MomentPipe() {
+var OrderByPipe = (function () {
+    function OrderByPipe() {
     }
-    MomentPipe.prototype.transform = function (value, format) {
+    OrderByPipe.prototype.transform = function (value, field, fieldType) {
         var date = moment(value);
-        return date.format(format);
+        console.log(field + fieldType);
+        if (fieldType === 'date') {
+            return value.sort(function (a, b) {
+                var bDate = b[field];
+                var aDate = a[field];
+                var diff = moment(aDate).diff(bDate);
+                return diff >= 0 ? 1 : -1;
+            });
+        }
+        else {
+            return value;
+        }
     };
-    MomentPipe = __decorate([
-        core_1.Pipe({ name: 'momentDate', pure: true }), 
+    OrderByPipe = __decorate([
+        core_1.Pipe({ name: 'orderBy', pure: true }), 
         __metadata('design:paramtypes', [])
-    ], MomentPipe);
-    return MomentPipe;
+    ], OrderByPipe);
+    return OrderByPipe;
 }());
-exports.MomentPipe = MomentPipe;
-//# sourceMappingURL=MomentPipe.js.map
+exports.OrderByPipe = OrderByPipe;
+//# sourceMappingURL=OrderByPipe.js.map

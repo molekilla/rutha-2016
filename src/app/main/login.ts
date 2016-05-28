@@ -13,7 +13,7 @@ import {FormBuilder, Validators, Control, ControlGroup} from '@angular/common';
             border-left: 5px solid #a94442; /* red */
         }`
     ],
-    templateUrl: 'public/app/main/login.html'
+    templateUrl: 'app/main/login.html'
 })
 export class LoginComponent implements OnInit {
     canReset: boolean;

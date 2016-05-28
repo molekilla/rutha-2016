@@ -12,7 +12,7 @@ import {User} from '../common/models/User';
   border-left: 5px solid #a94442; /* red */
 }`
     ],
-    templateUrl: 'public/app/main/signup.html'
+    templateUrl: 'app/main/signup.html'
 })
 export class SignupComponent {
     errorLabel: string;

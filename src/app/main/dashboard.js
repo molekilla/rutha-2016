@@ -12,6 +12,7 @@ var router_deprecated_1 = require('@angular/router-deprecated');
 var core_1 = require('@angular/core');
 var UserService_1 = require('../common/services/UserService');
 var MomentPipe_1 = require('../common/pipes/MomentPipe');
+var OrderByPipe_1 = require('../common/pipes/OrderByPipe');
 var DashboardComponent = (function () {
     function DashboardComponent(router, userService) {
         this.router = router;
@@ -32,8 +33,8 @@ var DashboardComponent = (function () {
     };
     DashboardComponent = __decorate([
         core_1.Component({
-            template: "<div class=\"toolbar-spacer\">\n    <div class=\"alert alert-danger\" *ngIf=\"errorLabel\" role=\"alert\">{{ errorLabel }}</div>\n    <table class=\"table\">\n    <thead>\n    <tr><th>Id</th>\n    <th>Username</th>\n    <th>Created</th></tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"#item of users\">\n      <td>{{ item.id }}</td>\n      <td>{{ item.username }}</td>\n      <td>{{ item.created | momentDate: 'dddd, MMMM Do YYYY' }}</td>\n      </tr>\n      </tbody>\n    </table>\n    </div>",
-            pipes: [MomentPipe_1.MomentPipe]
+            template: "<div class=\"toolbar-spacer\">\n    <div class=\"alert alert-danger\" *ngIf=\"errorLabel\" role=\"alert\">{{ errorLabel }}</div>\n    <table class=\"table\">\n    <thead>\n    <tr><th>Id</th>\n    <th>Username</th>\n    <th>Created</th></tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let item of users | orderBy: 'created' : 'date' \">\n      <td>{{ item.id }}</td>\n      <td>{{ item.username }}</td>\n      <td>{{ item.created | momentDate: 'dddd, MMMM Do YYYY' }}</td>\n      </tr>\n      </tbody>\n    </table>\n    </div>",
+            pipes: [MomentPipe_1.MomentPipe, OrderByPipe_1.OrderByPipe]
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.Router, UserService_1.UserService])
     ], DashboardComponent);

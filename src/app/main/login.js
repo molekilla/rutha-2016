@@ -61,7 +61,7 @@ var LoginComponent = (function () {
                 ".ng-valid[required] {\n            border-left: 5px solid #42A948; /* green */\n        }",
                 ".ng-invalid {\n            border-left: 5px solid #a94442; /* red */\n        }"
             ],
-            templateUrl: 'public/app/main/login.html'
+            templateUrl: 'app/main/login.html'
         }), 
         __metadata('design:paramtypes', [UserService_1.UserService, router_deprecated_1.RouteParams, common_1.FormBuilder])
     ], LoginComponent);
