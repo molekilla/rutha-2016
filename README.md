@@ -1,5 +1,5 @@
 # rutha-2016
-## a lean, npm based, hapi or lite-server based
+## a lean, npm based frontend seed
 ### angular 1 or 2 boilerplate with recipes
 ### in Typescript
 
@@ -8,7 +8,7 @@
 
 * Ubuntu
 * Windows
-* OSX (likely :) )
+* OSX
 
 ## Requires
 
@@ -40,6 +40,7 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 
 ### npm tasks ###
 
+* (Webpack recipe / branch) `npm start`: Serves frontend using webpack
 * `npm run start:lite`: Serves frontend using lite-server with auto reload
 * `npm run start:hapi`: Serves frontend using hapi with auto reload
 * `npm run build:js`: Builds javascript bundle
@@ -92,7 +93,9 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 * [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
 * [Pipes](https://github.com/molekilla/rutha-2016/tree/angular2-training-pipes)
 * [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-training-state-with-redux)
+* Managin state with redux-observable
 * [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree)
+* [Making Webpack work with Angular2](https://github.com/molekilla/rutha-2016/tree/angular2-webpack)
 
 
 ## Other seeds
@@ -101,7 +104,7 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 
 
 ### Maintainers, notes ###
-Rogelio Morrell C. 
+Rogelio Morrell C. 2016
 
 
 ### Disclaimer ###
