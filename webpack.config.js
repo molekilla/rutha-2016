@@ -1,19 +1,23 @@
 const path
     = require('path');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: {
-        'main': './src/app/app.ts',
-        'vendor': './src/app/vendor.ts'
+        'app': './src/app/app.ts',
+        'vendor': './src/app/vendor.ts',
+        //'polyfills': './src/app/polyfills.ts'
     },
     output: {
         path: './dist',
         filename: 'bundle.js'
     },
     plugins: [
-        new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-        new CopyWebpackPlugin([{ from: './src/index.html', to: 'index.html' }])
+         new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })
     ],
     resolve: {
         extensions: ['', '.ts', '.js']
