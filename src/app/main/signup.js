@@ -52,7 +52,7 @@ var SignupComponent = (function () {
                 ".ng-valid[required] {\n  border-left: 5px solid #42A948; /* green */\n}",
                 ".ng-invalid {\n  border-left: 5px solid #a94442; /* red */\n}"
             ],
-            templateUrl: 'public/app/main/signup.html'
+            templateUrl: 'app/main/signup.html'
         }), 
         __metadata('design:paramtypes', [UserService_1.UserService, router_deprecated_1.Router])
     ], SignupComponent);

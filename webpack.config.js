@@ -1,5 +1,5 @@
-const path
-    = require('path');
+const path = require('path');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -14,9 +14,14 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-         new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+        new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
+        }),
+        new UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
         })
     ],
     resolve: {

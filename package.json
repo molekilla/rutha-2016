@@ -9,7 +9,7 @@
     "build:sass": "node-sass --include-path scss scss/main.scss dist/main.css",
     "sass:w": "node-sass --watch --include-path scss scss/main.scss src/app/css/main.css",
     "build": "webpack",
-    "start": "webpack-dev-server --inline --colors --progress--display-error-details--display-cached--port8080",
+    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8081 --open",
     "test": "karma start src/karma.conf.js",
     "postinstall": "typings install && cd src && npm i"
   },
