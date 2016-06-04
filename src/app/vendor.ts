@@ -22,3 +22,10 @@ import '@angular/upgrade';
 // RxJS
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+
+// Redux
+import 'redux';
+import 'redux-promise';
+import 'redux-actions';
+import 'redux-logger';
+import 'redux-thunk';

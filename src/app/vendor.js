@@ -20,4 +20,10 @@ require('@angular/upgrade');
 // RxJS
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/mergeMap');
+// Redux
+require('redux');
+require('redux-promise');
+require('redux-actions');
+require('redux-logger');
+require('redux-thunk');
 //# sourceMappingURL=vendor.js.map
