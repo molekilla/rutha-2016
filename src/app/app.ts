@@ -8,10 +8,13 @@ import {createStore, applyMiddleware} from  'redux';
 import * as createLogger from 'redux-logger';
 
 import {ListReducers} from './common/reducers/ListReducers';
-import promise from 'redux-promise';
+import promise = require('redux-promise');
 
 const reduxLogger = createLogger();
-const appStore = createStore(ListReducers);
+const appStore = createStore(ListReducers, applyMiddleware(
+    promise,
+    reduxLogger
+  ));
 
 bootstrap(LayoutComponent, [
     ROUTER_PROVIDERS,

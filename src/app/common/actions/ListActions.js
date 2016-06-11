@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var redux_actions_1 = require('redux-actions');
 var core_1 = require('@angular/core');
 var ListActions = (function () {
     function ListActions() {
     }
     ListActions.prototype.list = function (item) {
-        return redux_actions_1.createAction('ADD_ITEM', function (item) { return item; });
+        debugger;
+        var t = { type: 'ADD_ITEM', payload: item };
+        return t;
     };
     ListActions = __decorate([
         core_1.Injectable(), 

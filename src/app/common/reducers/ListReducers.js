@@ -9,6 +9,7 @@ function ListReducers(state, action) {
             var items = {
                 items: state.items.concat([action.payload])
             };
+            debugger;
             return Object.assign({}, state, items);
         default:
             return state;

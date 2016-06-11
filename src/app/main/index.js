@@ -21,12 +21,14 @@ var IndexComponent = (function () {
         this.unsubscribe = null;
     }
     IndexComponent.prototype.addText = function (val) {
+        debugger;
         this.appStore.dispatch(this.actions.list(val));
     };
     IndexComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.unsubscribe = this.appStore.subscribe(function () {
             var state = _this.appStore.getState();
+            debugger;
             _this.items = state.items;
         });
     };
@@ -35,7 +37,8 @@ var IndexComponent = (function () {
     };
     IndexComponent = __decorate([
         core_1.Component({
-            template: "<div class=\"page-header\">\n        <h1>Hello Hejsan Hola rutha 2016!</h1>\n    </div>\n    <p class=\"lead\"><input #itemTxt type=\"text\" value=\"\"><button (click)=\"addText(#itemTxt.value)\">Add</button></p>\n    <div>\n    <div *ngFor=\"let item of items\">\n    {{ item }}\n    </div>\n    </div>"
+            template: "<div class=\"page-header\">\n        <h1>Hello Hejsan Hola rutha 2016!</h1>\n    </div>\n    <p class=\"lead\"><input #itemTxt type=\"text\" value=\"\"><button (click)=\"addText(itemTxt.value)\">Add</button></p>\n    <div>\n    <div *ngFor=\"let item of items\">\n    {{ item }}\n    </div>\n    </div>",
+            providers: [ListActions_1.ListActions]
         }),
         __param(0, core_1.Inject('AppStore')), 
         __metadata('design:paramtypes', [Object, ListActions_1.ListActions])
