@@ -13,7 +13,7 @@ System.config({
     "assets/*": "assets/*",
     "github:*": "github.com/*",
     "npm:*": "node_modules/*",
-    "angular2/*": "node_modules/angular2/*",
+    "@angular/*": "node_modules/@angular/*",
     "rxjs/*": "node_modules/rxjs/*"    
   },    
   map: {
