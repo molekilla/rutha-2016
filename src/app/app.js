@@ -1,4 +1,3 @@
-///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
 System.register(['angular', '_', 'restangular', 'angular-route', 'angular-ui-router', 'angular-messages', './common/services/UserService', './uiRouteConfig', './profile/UserListCtrl', './common/directives/Counter', './common/components/Counter', './upgradeAdapter'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
