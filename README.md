@@ -13,22 +13,22 @@
 ## Requires
 
 * (Optional) MongoDB 3.x
-* Typescript 1.8.7
+* Typescript 1.8.10
 * Node 4.2.x or later
-* tsd or typings
+* typings
 
 ### Preinstall requisites
 
 1. npm install nodemon -g
-2. npm install typescript@1.8.7 -g
-3. npm install tsd -g (or npm install typings -g)
+2. npm install typescript@1.8.10 -g
+3. npm install typings -g
 
 ## Installing master - Angular 1
 
 1. npm install
-2. tsd install (or typings install)
+2. typings install
 
-## Installing Angular 2
+## Installing angular2-webpack - Angular 2
 
 1. npm install
 2. (Optional, for Jasmine types) tsd install (or typings install)
@@ -92,11 +92,10 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
 * [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
 * [Pipes](https://github.com/molekilla/rutha-2016/tree/angular2-training-pipes)
-* [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-training-state-with-redux)
-* Managin state with redux-observable
 * [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree)
-* [Making Webpack work with Angular2](https://github.com/molekilla/rutha-2016/tree/angular2-webpack)
-
+* [Making Webpack work with Angular2](https://github.com/molekilla/rutha-2016/tree/angular2-webpack)  - up to RC3
+* [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-webpack-redux) - up to RC3
+* Managin state with redux-observable
 
 ## Other seeds
 
