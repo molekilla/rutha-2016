@@ -18,13 +18,14 @@
     <meta name="author" content="Rutha">
     <link rel="stylesheet" href="../public/app/css/main.css">
     <script src="../public/node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="../public/node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="../public/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+     <script src="../public/node_modules/zone.js/dist/zone.js"></script>
+    <script src="../public/node_modules/reflect-metadata/Reflect.js"></script>
+
     
     <script src="../public/node_modules/systemjs/dist/system.src.js"></script>
     <script src="../public/app/system.config.js"></script>
     <script>
-        System.import('app/app.js');
+        System.import('app').catch(function(err){ console.error(err);  });;
     </script>
     <script src="//localhost:9091"></script>
 </head>

@@ -1,6 +1,7 @@
-import {Router} from 'angular2/router';
-import {Component} from 'angular2/core';
-import {FORM_DIRECTIVES} from 'angular2/common';
+
+import {FORM_DIRECTIVES} from '@angular2/common';
+import {Router} from '@angular/router-deprecated';
+import {Component} from '@angular/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
 import {ConfirmPasswordComponent} from '../common/components/confirm-password';

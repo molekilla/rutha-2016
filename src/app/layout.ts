@@ -1,10 +1,10 @@
-import {Component, OnInit} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {IndexComponent}   from './main/index';
 import {SignupComponent}     from './main/signup';
 import {LoginComponent}     from './main/login';
 import {DashboardComponent}     from './main/dashboard';
-import {HTTP_PROVIDERS}    from 'angular2/http';
+import {HTTP_PROVIDERS}    from '@angular/http';
 import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider';
 
 @Component({

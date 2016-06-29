@@ -1,24 +1,30 @@
 {
-    "name": "rutha-2016",
-    "version": "0.2.0",
-    "dependencies": {
-        "angular2": "2.0.0-beta.9",
-        "bootstrap": "^3.3.6",
-        "plugin-ng-template": "^0.1.1",
-        "systemjs": "0.19.24",
-        "underscore": "^1.8.3",
-        "es6-promise": "^3.0.2",
-        "es6-shim": "^0.33.3",
-        "reflect-metadata": "0.1.2",
-        "rxjs": "5.0.0-beta.2",
-        "zone.js": "0.5.15",
-        "es6-module-loader": "^0.17.8"
-    },
-    "devDependencies": {
-        "jasmine-core": "^2.4.1",
-        "karma": "^0.13.19",
-        "traceur": "^0.0.91",
-        "karma-chrome-launcher": "^0.2.2",
-        "karma-jasmine": "^0.3.7"
-    }
+        "name": "rutha-2016",
+        "version": "0.3.0",
+        "dependencies": {
+                "@angular/common": "2.0.0-rc.3",
+                "@angular/compiler": "2.0.0-rc.3",
+                "@angular/core": "2.0.0-rc.3",
+                "@angular/forms": "0.1.1",
+                "@angular/http": "2.0.0-rc.3",
+                "@angular/platform-browser": "2.0.0-rc.3",
+                "@angular/platform-browser-dynamic": "2.0.0-rc.3",
+                "@angular/router": "3.0.0-alpha.7",
+                "@angular/router-deprecated": "2.0.0-rc.2",
+                "@angular/upgrade": "2.0.0-rc.3",
+                "systemjs": "0.19.27",
+                "es6-shim": "^0.35.0",
+                "reflect-metadata": "^0.1.3",
+                "rxjs": "5.0.0-beta.6",
+                "zone.js": "^0.6.12",
+                "core-js": "^2.4.0",
+                "bootstrap": "^3.3.6"
+        },
+        "devDependencies": {
+                "jasmine-core": "^2.4.1",
+                "karma": "^0.13.19",
+                "traceur": "^0.0.91",
+                "karma-chrome-launcher": "^0.2.2",
+                "karma-jasmine": "^0.3.7"
+        }
 }
