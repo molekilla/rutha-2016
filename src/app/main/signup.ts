@@ -1,5 +1,5 @@
 
-import {FORM_DIRECTIVES} from '@angular2/common';
+import {FORM_DIRECTIVES} from '@angular/common';
 import {Router} from '@angular/router-deprecated';
 import {Component} from '@angular/core';
 import {UserService} from '../common/services/UserService';
