@@ -83,6 +83,7 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 * [Bootstrap](https://github.com/molekilla/rutha-2016/tree/angular2-training-upgrade-bootstrap)
 
 ## Angular 2 Recipes
+* [Main Seed](https://github.com/molekilla/rutha-2016/tree/angular2) - up to RC3
 * [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
 * [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
 * [Forms with template validations](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
@@ -91,10 +92,10 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 * [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
 * [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
 * [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
-* [Pipes](https://github.com/molekilla/rutha-2016/tree/angular2-training-pipes)
-* [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree)
+* [Pipes](https://github.com/molekilla/rutha-2016/tree/angular2-training-pipes) - up to RC3
+* [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree) - up to RC3
 * [Making Webpack work with Angular2](https://github.com/molekilla/rutha-2016/tree/angular2-webpack)  - up to RC3
-* [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-webpack-redux) - up to RC3
+* [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-webpack-redux)   - up to RC3
 * Managin state with redux-observable
 
 ## Other seeds
