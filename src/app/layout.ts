@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, Routes, ROUTER_DIRECTIVES} from '@angular/router';
-import {IndexComponent}   from './main/index';
-import {SignupComponent}     from './main/signup';
-import {LoginComponent}     from './main/login';
-import {DashboardComponent}     from './main/dashboard';
+import {ROUTER_DIRECTIVES} from '@angular/router';
+
 import {HTTP_PROVIDERS}    from '@angular/http';
 import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider';
 
@@ -49,15 +46,8 @@ import {USER_SERVICE_PROVIDER}       from './common/services/UserServiceProvider
         USER_SERVICE_PROVIDER
     ]
 })
-@Routes([
-    { path: '/',  component: IndexComponent },
-    { path: '/main', component: IndexComponent },
-    { path: '/login/:action', component: LoginComponent },
-    { path: '/signup', component: SignupComponent },
-    { path: '/dashboard', component: DashboardComponent }
-])
 export class LayoutComponent implements OnInit {
-    constructor(private _router: Router) {
+    constructor() {
     }
     ngOnInit() {
        // this._router.navigate(['Index']);

@@ -10,15 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var index_1 = require('./main/index');
-var signup_1 = require('./main/signup');
-var login_1 = require('./main/login');
-var dashboard_1 = require('./main/dashboard');
 var http_1 = require('@angular/http');
 var UserServiceProvider_1 = require('./common/services/UserServiceProvider');
 var LayoutComponent = (function () {
-    function LayoutComponent(_router) {
-        this._router = _router;
+    function LayoutComponent() {
     }
     LayoutComponent.prototype.ngOnInit = function () {
         // this._router.navigate(['Index']);
@@ -32,15 +27,8 @@ var LayoutComponent = (function () {
                 http_1.HTTP_PROVIDERS,
                 UserServiceProvider_1.USER_SERVICE_PROVIDER
             ]
-        }),
-        router_1.Routes([
-            { path: '/', component: index_1.IndexComponent },
-            { path: '/main', component: index_1.IndexComponent },
-            { path: '/login/:action', component: login_1.LoginComponent },
-            { path: '/signup', component: signup_1.SignupComponent },
-            { path: '/dashboard', component: dashboard_1.DashboardComponent }
-        ]), 
-        __metadata('design:paramtypes', [router_1.Router])
+        }), 
+        __metadata('design:paramtypes', [])
     ], LayoutComponent);
     return LayoutComponent;
 }());
