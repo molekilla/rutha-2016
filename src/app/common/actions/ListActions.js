@@ -9,13 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Rx = require('rxjs/Rx');
 var ListActions = (function () {
     function ListActions() {
     }
+    // With Rx
     ListActions.prototype.list = function (item) {
         debugger;
-        var t = { type: 'ADD_ITEM', payload: item };
-        return t;
+        return function (actions, store) { return (Rx.Observable.of({ type: 'ADD_ITEM', payload: item }).delay(1000)); };
+    };
+    // With Promise
+    ListActions.prototype.list2 = function (item) {
+        debugger;
+        return function (actions, store) { return (Promise.resolve({ type: 'ADD_ITEM', payload: item })); };
     };
     ListActions = __decorate([
         core_1.Injectable(), 

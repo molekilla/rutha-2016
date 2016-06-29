@@ -8,11 +8,12 @@ import {createStore, applyMiddleware} from  'redux';
 import * as createLogger from 'redux-logger';
 
 import {ListReducers} from './common/reducers/ListReducers';
-import promise = require('redux-promise');
+import { reduxObservable } from 'redux-observable';
+
 
 const reduxLogger = createLogger();
 const appStore = createStore(ListReducers, applyMiddleware(
-    promise,
+    reduxObservable(),
     reduxLogger
   ));
 
