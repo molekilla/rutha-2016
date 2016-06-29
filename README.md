@@ -84,7 +84,7 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 
 ## Angular 2 Recipes
 * [Main Seed](https://github.com/molekilla/rutha-2016/tree/angular2) - up to RC3
-* [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing)
+* [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing) - up to RC3 & new router
 * [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
 * [Forms with template validations](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
 * [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
