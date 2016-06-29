@@ -96,7 +96,7 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 * [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree) - up to RC3
 * [Making Webpack work with Angular2](https://github.com/molekilla/rutha-2016/tree/angular2-webpack)  - up to RC3
 * [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-webpack-redux)   - up to RC3
-* Managin state with redux-observable
+* [Managing state with redux-observable](https://github.com/molekilla/rutha-2016/tree/angular2-webpack-redux-observable)   - up to RC3
 
 ## Other seeds
 
