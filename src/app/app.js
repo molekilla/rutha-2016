@@ -1,11 +1,16 @@
+// import { bootstrap }    from '@angular/platform-browser-dynamic';
+// import {LayoutComponent} from './layout'
+// import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+// import {provide}           from '@angular/core';
+// import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 "use strict";
+// bootstrap(LayoutComponent, [
+//     ROUTER_PROVIDERS,
+//     provide(LocationStrategy,
+//         { useClass: HashLocationStrategy })
+// ]);
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
-var layout_1 = require('./layout');
-var router_deprecated_1 = require('@angular/router-deprecated');
-var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-platform_browser_dynamic_1.bootstrap(layout_1.LayoutComponent, [
-    router_deprecated_1.ROUTER_PROVIDERS,
-    core_1.provide(common_1.LocationStrategy, { useClass: common_1.HashLocationStrategy })
-]);
+var app_module_1 = require('./app.module');
+var platform = platform_browser_dynamic_1.platformBrowserDynamic();
+platform.bootstrapModule(app_module_1.AppModule);
 //# sourceMappingURL=app.js.map

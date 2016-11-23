@@ -63,9 +63,10 @@ var LoginComponent = (function () {
             ],
             templateUrl: 'app/main/login.html'
         }), 
-        __metadata('design:paramtypes', [UserService_1.UserService, router_deprecated_1.RouteParams, common_1.FormBuilder])
+        __metadata('design:paramtypes', [UserService_1.UserService, router_deprecated_1.RouteParams, (typeof (_a = typeof common_1.FormBuilder !== 'undefined' && common_1.FormBuilder) === 'function' && _a) || Object])
     ], LoginComponent);
     return LoginComponent;
+    var _a;
 }());
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.js.map
