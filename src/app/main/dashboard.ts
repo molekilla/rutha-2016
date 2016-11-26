@@ -1,4 +1,4 @@
-import {Router, RouteParams} from '@angular/router-deprecated';
+import {Router, RouteParams} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../common/services/UserService';
 import {User} from '../common/models/User';
@@ -11,7 +11,7 @@ import {User} from '../common/models/User';
     <table class="table">
     <thead><tr><th>Username</th></tr></thead>
     <tbody>
-      <tr *ngFor="#item of users">
+      <tr *ngFor="let item of users">
       <td>{{ item.username }}</td>
       </tr>
       </tbody>

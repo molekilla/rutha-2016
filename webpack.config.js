@@ -7,7 +7,6 @@ module.exports = {
     entry: {
         'app': './src/app/app.ts',
         'vendor': './src/app/vendor.ts',
-        //'polyfills': './src/app/polyfills.ts'
     },
     output: {
         path: './dist',

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Router, RouteParams} from '@angular/router-deprecated';
-import {UserService} from '../common/services/UserService';
-import {User} from '../common/models/User';
-import {FormBuilder, Validators, Control, ControlGroup} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { UserService } from '../common/services/UserService';
+import { User } from '../common/models/User';
+import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
     styles: [
@@ -20,20 +20,20 @@ export class LoginComponent implements OnInit {
     title: string;
     errorLabel: string;
 
-    password: Control;
-    email: Control;
-    loginFormModel: ControlGroup;
+    password: FormControl;
+    email: FormControl;
+    loginFormModel: FormGroup;
     user = new User();
 
     constructor(private userService: UserService,
-        private _routeParams: RouteParams,
+        private route: ActivatedRoute,
         private formBuilder: FormBuilder) {
         console.log('Login controller');
         this.canReset = true;
         this.title = 'Login';
 
-        this.password = new Control("", Validators.compose([Validators.required, Validators.minLength(5)]));
-        this.email = new Control("", Validators.compose([Validators.required, this.checkEmail]));
+        this.password = new FormControl("", Validators.compose([Validators.required, Validators.minLength(5)]));
+        this.email = new FormControl("", Validators.compose([Validators.required, this.checkEmail]));
         this.loginFormModel = formBuilder.group({
             email: this.email,
             password: this.password
@@ -41,13 +41,17 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this._routeParams.get('action') === 'forgot') {
-            this.canReset = false;
-            this.title = 'Reset';
-        }
+        this.route.params
+            .switchMap((params: Params) => params['action'])
+            .subscribe(action => {
+                if (action === 'forgot') {
+                    this.canReset = false;
+                    this.title = 'Reset';
+                }
+            })
     }
 
-    checkEmail(field: Control) {
+    checkEmail(field: FormControl) {
         if (field.value && field.value.toString().indexOf('@') > 0) {
             return null;
         } else {
@@ -59,7 +63,7 @@ export class LoginComponent implements OnInit {
         this.userService
             .login(this.user)
             .subscribe(
-            resp  => {
+            resp => {
                 console.log('Logged');
                 this.errorLabel = null;
                 window.location.href = '/profile#dashboard';

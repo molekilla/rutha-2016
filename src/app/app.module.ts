@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { LayoutComponent } from './layout'
 import { IndexComponent } from './main/index';
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     LayoutComponent,
@@ -33,4 +35,8 @@ const appRoutes: Routes = [
     LayoutComponent
   ]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+    
+  }
+}
