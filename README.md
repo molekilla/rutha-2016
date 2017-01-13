@@ -13,14 +13,13 @@
 ## Requires
 
 * (Optional) MongoDB 3.x
-* Typescript 1.8.10
 * Node 4.2.x or later
-* typings
+
 
 ### Preinstall requisites
 
 1. npm install nodemon -g
-2. npm install typescript@1.8.10 -g
+2. npm install typescript -g
 3. npm install typings -g
 
 ## Installing master - Angular 1
@@ -32,11 +31,6 @@
 
 1. npm install
 2. (Optional, for Jasmine types) tsd install (or typings install)
-
-### why typings ?
-
-More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.html)
-
 
 ### npm tasks ###
 
@@ -82,21 +76,8 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 
 * [Bootstrap](https://github.com/molekilla/rutha-2016/tree/angular2-training-upgrade-bootstrap)
 
-## Angular 2 Recipes
-* [Main Seed](https://github.com/molekilla/rutha-2016/tree/angular2) - up to RC3
-* [Routing](https://github.com/molekilla/rutha-2016/tree/angular2-training-routing) - up to RC3 & new router
-* [Services with Observables](https://github.com/molekilla/rutha-2016/tree/angular2-training-services)
-* [Forms with template validations](https://github.com/molekilla/rutha-2016/tree/angular2-training-forms)
-* [Services with Promises](https://github.com/molekilla/rutha-2016/tree/angular2-training-promises)
-* [DI Provider](https://github.com/molekilla/rutha-2016/tree/angular2-training-di-provider)
-* [Forms with model validations aka FormBuilder](https://github.com/molekilla/rutha-2016/tree/angular2-training-validators)
-* [Unit Tests](https://github.com/molekilla/rutha-2016/tree/angular2-training-unit-tests)
-* [Displaying list of items](https://github.com/molekilla/rutha-2016/tree/angular2-training-databinding-list)
-* [Pipes](https://github.com/molekilla/rutha-2016/tree/angular2-training-pipes) - up to RC3
-* [Component Inputs and Outputs](https://github.com/molekilla/rutha-2016/tree/angular2-training-component-tree) - up to RC4
-* [Making Webpack work with Angular2](https://github.com/molekilla/rutha-2016/tree/angular2-webpack)  - up to RC3
-* [Managing state with Redux](https://github.com/molekilla/rutha-2016/tree/angular2-webpack-redux)   - up to RC3
-* [Managing state with redux-observable](https://github.com/molekilla/rutha-2016/tree/angular2-webpack-redux-observable)   - up to RC3
+## Angular 2
+* [Seed](https://github.com/molekilla/rutha-2016/tree/angular2-webpack)
 
 ## Other seeds
 
@@ -104,7 +85,7 @@ More [here](https://angular.io/docs/ts/latest/guide/typescript-configuration.htm
 
 
 ### Maintainers, notes ###
-Rogelio Morrell C. 2016
+Rogelio Morrell C. 2016, 2017
 
 
 ### Disclaimer ###
