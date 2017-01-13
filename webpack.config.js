@@ -16,11 +16,6 @@ module.exports = {
         new CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        }),
-        new UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
         })
     ],
     resolve: {

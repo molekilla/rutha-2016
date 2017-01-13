@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { LayoutComponent } from './layout'
 import { IndexComponent } from './main/index';
 import { SignupComponent } from './main/signup';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpModule,
   ],
   declarations: [
     LayoutComponent,
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
     LayoutComponent
   ],
   providers: [
-    { provide: UserService, useClass: UserService  }
+    UserService
   ]
 })
 export class AppModule { 
